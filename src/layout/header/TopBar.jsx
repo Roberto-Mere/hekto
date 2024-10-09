@@ -5,7 +5,7 @@ import Menu from './Menu';
 
 export default function TopBar() {
   return (
-    <div>
+    <div className="px-sides flex justify-between bg-tertiary py-12">
       <Contacts />
       <Menu />
     </div>
