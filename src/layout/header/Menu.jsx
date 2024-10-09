@@ -24,7 +24,7 @@ export default function Menu() {
           <IconItem
             icon={item.icon}
             text={item.text}
-            style="gap-04 text-white"
+            style="gap-4 text-white"
             forward={false}
           />
         ) : (
