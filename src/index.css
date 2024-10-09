@@ -9,6 +9,8 @@
 }
 
 :root {
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+
   --color-white: #ffffff;
   --color-gray-1: #f8f8fd;
   --color-gray-2: #e5e0fc;
