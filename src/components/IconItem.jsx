@@ -1,14 +1,14 @@
-export default function IconItem({ icon, text, forward = true }) {
+export default function IconItem({ icon, text, style, forward = true }) {
   return (
-    <div>
+    <div className={`flex items-center ${style}`}>
       {forward ? (
         <>
           {icon}
-          <p>{text}</p>
+          {text}
         </>
       ) : (
         <>
-          <p>{text}</p>
+          {text}
           {icon}
         </>
       )}

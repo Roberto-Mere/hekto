@@ -1,6 +1,6 @@
-export default function List({ list, children, keyFn }) {
+export default function List({ list, children, keyFn, style }) {
   return (
-    <ul>
+    <ul className={`flex items-center ${style}`}>
       {list.map((item, index) => (
         <li key={keyFn(item, index)}>{children(item)}</li>
       ))}
