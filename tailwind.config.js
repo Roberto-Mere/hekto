@@ -37,9 +37,21 @@ export default {
       h3: ['3.6rem', '4.4rem'],
       h4: ['2.8rem', '3.6rem'],
     },
+    spacing: {
+      4: '0.4rem',
+      8: '0.8rem',
+      12: '1.2rem',
+      16: '1.6rem',
+      24: '2.4rem',
+      32: '3.2rem',
+      48: '4.8rem',
+    },
     extend: {
       letterSpacing: {
         heading: '1.5%',
+      },
+      padding: {
+        sides: '30.4rem',
       },
     },
   },
