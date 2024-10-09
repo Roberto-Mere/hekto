@@ -1,3 +1,3 @@
-export default function Sub2({ children }) {
-  return <p className="text-sub2 font-bold">{children}</p>;
+export default function Sub2({ children, style = '' }) {
+  return <p className={`text-sub2 font-bold ${style}`}>{children}</p>;
 }
