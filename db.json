@@ -1,0 +1,167 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Watches",
+      "price": 62,
+      "offer": 0,
+      "rating": 4,
+      "category": "watches",
+      "brand": "apple",
+      "image": "/products/watches.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Headphones",
+      "price": 99,
+      "offer": 0,
+      "rating": 3,
+      "category": "headphones",
+      "brand": "apple",
+      "image": "/products/headphones.png"
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 99,
+      "offer": 0,
+      "rating": 2,
+      "category": "laptops",
+      "brand": "apple",
+      "image": "/products/laptop.png"
+    },
+    {
+      "id": 4,
+      "name": "Black Watches",
+      "price": 55,
+      "offer": 0,
+      "rating": 4,
+      "category": "watches",
+      "brand": "casio",
+      "image": "/products/black-watches.png"
+    },
+    {
+      "id": 5,
+      "name": "Game Console",
+      "price": 89,
+      "offer": 0,
+      "rating": 4,
+      "category": "consoles",
+      "brand": "sony",
+      "image": "/products/game-console.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Shoes",
+      "price": 75,
+      "offer": 0,
+      "rating": 4,
+      "category": "clothes",
+      "brand": "nike",
+      "image": "/products/shoes.png"
+    },
+    {
+      "id": 7,
+      "name": "Perfume",
+      "price": 29,
+      "offer": 0,
+      "rating": 4,
+      "category": "perfumes",
+      "brand": "vke",
+      "image": "/products/perfume.png"
+    },
+    {
+      "id": 8,
+      "name": "Present Box",
+      "price": 29,
+      "offer": 0,
+      "rating": 4,
+      "category": "perfumes",
+      "brand": "vke",
+      "image": "/products/present-box.png"
+    },
+    {
+      "id": 9,
+      "name": "Bracelet",
+      "price": 76,
+      "offer": 0,
+      "rating": 1,
+      "category": "jewellery",
+      "brand": "glossiness",
+      "image": "/products/bracelet.png"
+    },
+    {
+      "id": 10,
+      "name": "Ring",
+      "price": 65,
+      "offer": 0,
+      "rating": 5,
+      "category": "jewellery",
+      "brand": "glossiness",
+      "image": "/products/ring.png"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "watches",
+      "image": "/products/watches.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "headphones",
+      "image": "/products/headphones.png"
+    },
+    {
+      "id": 3,
+      "name": "laptops",
+      "image": "/products/laptop.png"
+    },
+    {
+      "id": 4,
+      "name": "consoles",
+      "image": "/products/game-console.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "clothes",
+      "image": "/products/shoes.png"
+    },
+    {
+      "id": 6,
+      "name": "perfumes",
+      "image": "/products/perfume.png"
+    },
+    {
+      "id": 7,
+      "name": "jewellery",
+      "image": "/products/ring.png"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "author": "René Magritte",
+      "date": "1929-11-21T06:00:00.000Z",
+      "title": "The Treachery of Images",
+      "description": "Could you stuff my pipe? No, it's just a representation, is it not? So if I had written on my picture 'This is a pipe', I'd have been lying!",
+      "image": "/blogs/blog-1.jpeg"
+    },
+    {
+      "id": 2,
+      "author": "René Magritte",
+      "date": "1964-11-21T06:00:00.000Z",
+      "title": "The Son of Man",
+      "description": "Everything we see hides another thing, we always want to see what is hidden by what we see.",
+      "image": "/blogs/blog-2.jpeg"
+    },
+    {
+      "id": 3,
+      "author": "René Magritte",
+      "date": "1928-11-21T06:00:00.000Z",
+      "title": "The Lovers",
+      "description": "An overwhelming poetic effect through the arrangement of objects borrowed from reality",
+      "image": "/blogs/blog-3.jpeg"
+    }
+  ]
+}
