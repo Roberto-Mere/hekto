@@ -9,26 +9,7 @@
 }
 
 :root {
+  /* 1rem = 10px */
+  font-size: 62.5%;
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
-
-  --color-white: #ffffff;
-  --color-gray-1: #f8f8fd;
-  --color-gray-2: #e5e0fc;
-  --color-gray-3: #8a8fb9;
-  --color-black: #101750;
-
-  --color-primary: #fb2e86;
-  --color-primary-dark: #f0056a;
-  --color-primary-light: #fc5fa2;
-  --color-secondary: #f9ba00;
-  --color-secondary-light: #fff3ce;
-  --color-tertiary: #7e33e0;
-
-  --color-danger: #fb2448;
-  --color-dangerlight: #feb9c4;
-  --color-info: #603eff;
-  --color-info-light: #ddd6ff;
-  --color-success: #0cc562;
-  --color-success-dark: #00994c;
-  --color-success-light: #92f2bf;
 }
