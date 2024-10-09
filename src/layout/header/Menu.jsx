@@ -6,18 +6,17 @@ import CartIcon from '../../assets/svg/cart.svg';
 import IconItem from '../../components/IconItem';
 
 export default function Menu() {
+  const menuList = [
+    // Temp language and currency IconItems while we get select menus
+    { icon: <ArrowDownIcon />, text: 'English' },
+    { icon: <ArrowDownIcon />, text: 'mhhasanul@gmail.com' },
+    { icon: <UserIcon />, text: 'Login' },
+    { icon: <HeartIcon />, text: 'Wishlist' },
+    { icon: <CartIcon /> },
+  ];
+
   return (
-    <List
-      list={[
-        // Temp language and currency IconItems while we get select menus
-        { icon: <ArrowDownIcon />, text: 'English' },
-        { icon: <ArrowDownIcon />, text: 'mhhasanul@gmail.com' },
-        { icon: <UserIcon />, text: 'Login' },
-        { icon: <HeartIcon />, text: 'Wishlist' },
-        { icon: <CartIcon /> },
-      ]}
-      keyFn={(_, index) => index}
-    >
+    <List list={menuList} keyFn={(_, index) => index}>
       {(item) =>
         item.text ? <IconItem icon={item.icon} text={item.text} /> : item.icon
       }
