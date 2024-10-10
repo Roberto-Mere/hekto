@@ -40,7 +40,7 @@ export default function Unique() {
   return (
     <section className="px-sides gap-128 bg-background flex items-center py-32">
       <div className="grid">
-        <Decor className="col-start-1 col-end-2 row-start-1 row-end-2 -translate-x-60 text-[#F5E1FC]" />
+        <Decor className="col-start-1 col-end-2 row-start-1 row-end-2 -translate-x-64 text-[#F5E1FC]" />
         <img
           src={couchImage}
           alt="Comfy couch"
