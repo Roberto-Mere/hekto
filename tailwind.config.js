@@ -52,7 +52,7 @@ export default {
     },
     extend: {
       letterSpacing: {
-        heading: '1.5%',
+        heading: '1.5px',
       },
       padding: {
         sides: '30.4rem',
