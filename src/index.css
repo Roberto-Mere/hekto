@@ -14,3 +14,10 @@
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   color: #101750;
 }
+
+@layer utilities {
+  .grid-overlap {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}

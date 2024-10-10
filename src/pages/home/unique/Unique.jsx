@@ -40,12 +40,8 @@ export default function Unique() {
   return (
     <section className="px-sides gap-128 bg-background flex items-center py-32">
       <div className="grid">
-        <Decor className="col-start-1 col-end-2 row-start-1 row-end-2 -translate-x-64 text-[#F5E1FC]" />
-        <img
-          src={couchImage}
-          alt="Comfy couch"
-          className="z-10 col-start-1 col-end-2 row-start-1 row-end-2"
-        />
+        <Decor className="grid-overlap -translate-x-64 text-[#F5E1FC]" />
+        <img src={couchImage} alt="Comfy couch" className="grid-overlap z-10" />
       </div>
       <div className="flex flex-col gap-48">
         <H3>Unique Features Of latest & Trending Poducts</H3>
