@@ -7,7 +7,7 @@ export default function Links() {
     <List
       list={['Home', 'Products', 'Blog', 'Contact']}
       keyFn={(item) => item}
-      style={'ml-[8rem] mr-auto gap-32'}
+      style={'ml-[8rem] mr-auto gap-32 items-center'}
     >
       {(item) => (
         <NavLink>

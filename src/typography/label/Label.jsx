@@ -1,3 +1,3 @@
-export default function BodyLarge({ children }) {
-  return <p className="text-base font-normal">{children}</p>;
+export default function Label({ children, style = '' }) {
+  return <p className={`text-base font-normal ${style}`}>{children}</p>;
 }

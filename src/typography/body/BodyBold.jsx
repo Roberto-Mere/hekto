@@ -1,3 +1,3 @@
-export default function BodyLarge({ children }) {
-  return <p className="font-lato text-base font-bold">{children}</p>;
+export default function BodyBold({ children, style = '' }) {
+  return <p className={`font-lato text-base font-bold ${style}`}>{children}</p>;
 }
