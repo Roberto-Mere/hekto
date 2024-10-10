@@ -44,7 +44,9 @@ export default {
       16: '1.6rem',
       24: '2.4rem',
       32: '3.2rem',
+      40: '4rem',
       48: '4.8rem',
+      60: '6rem',
       96: '9.6rem',
       128: '12.8rem',
     },
@@ -54,6 +56,12 @@ export default {
       },
       padding: {
         sides: '30.4rem',
+      },
+      backgroundImage: {
+        newsletter: "url('./src/assets/image/subscribe.png')",
+      },
+      backgroundPosition: {
+        'bottom-4': 'bottom 15% center',
       },
     },
   },
