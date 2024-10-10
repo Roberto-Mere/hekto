@@ -1,4 +1,4 @@
-export default function List({ list, children, keyFn, style }) {
+export default function List({ list, children, keyFn, style = '' }) {
   return (
     <ul className={`flex ${style}`}>
       {list.map((item, index) => (
