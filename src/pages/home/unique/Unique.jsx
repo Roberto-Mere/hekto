@@ -38,7 +38,7 @@ export default function Unique() {
   ];
 
   return (
-    <section className="px-sides gap-128 flex items-center bg-[#F1F0FF] py-32">
+    <section className="px-sides gap-128 bg-background flex items-center py-32">
       <div className="grid">
         <Decor className="col-start-1 col-end-2 row-start-1 row-end-2 -translate-x-60 text-[#F5E1FC]" />
         <img
@@ -51,7 +51,7 @@ export default function Unique() {
         <H3>Unique Features Of latest & Trending Poducts</H3>
         <List
           list={featuresList}
-          keyFn={(item) => item.text}
+          keyFn={(_, index) => index}
           style="flex-col gap-16"
         >
           {(item) => <IconItem {...item} style="gap-16" />}

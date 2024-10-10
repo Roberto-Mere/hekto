@@ -21,6 +21,7 @@ export default {
       success: '#0cc562',
       'success-dark': '#00994c',
       'success-light': '#92f2bf',
+      background: '#f2f0ff',
     },
     fontFamily: {
       lato: ['Lato', 'Helvetica', 'Arial', 'sans-serif'],
