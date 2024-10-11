@@ -4,14 +4,36 @@ import { useState } from 'react';
 
 export default function ButtonSlider({
   slides,
+  fetchSlide,
   btnType,
   classes = '',
   btnClasses = '',
 }) {
   const [currSlide, setCurrSlide] = useState(0);
+  const [currSlides, setCurrSlides] = useState(slides);
 
-  function goToSlide(slide) {
+  async function goToSlide(slide) {
     setCurrSlide(slide);
+
+    if (slide + 1 !== currSlides.length && !currSlides[slide + 1]) {
+      const nextSlide = await fetchSlide(slide + 1);
+
+      setCurrSlides((prevSlides) => {
+        const newSlides = [...prevSlides];
+        newSlides[slide + 1] = nextSlide;
+
+        return newSlides;
+      });
+    } else if (!currSlides[slide]) {
+      const nextSlide = await fetchSlide(slide);
+
+      setCurrSlides((prevSlides) => {
+        const newSlides = [...prevSlides];
+        newSlides[slide] = nextSlide;
+
+        return newSlides;
+      });
+    }
   }
 
   const buttons = slides.map((_, index) => (
@@ -30,7 +52,7 @@ export default function ButtonSlider({
   return (
     <div className={classes}>
       <List
-        list={slides}
+        list={currSlides}
         keyFn={(_, index) => index}
         classes={`overflow-hidden`}
         itemClasses="basis-full shrink-0"

@@ -44,7 +44,7 @@ export default function Hero() {
     '',
   ];
 
-  function getNextSlide(slide) {
+  function fetchSlide(slide) {
     return new Promise((resolve) =>
       setTimeout(() => {
         resolve(<HeroSlide {...slidesContent[slide]} />);
@@ -57,7 +57,7 @@ export default function Hero() {
       <Lamp />
       <ButtonSlider
         slides={slides}
-        getNextSlide={getNextSlide}
+        fetchSlide={fetchSlide}
         btnType="romboid"
         btnClasses="gap-16 justify-center"
       />
