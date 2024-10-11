@@ -1,5 +1,5 @@
 import List from '../../components/List';
-import Sub4 from '../../typography/subtitle/Sub4';
+import Typography from '../../components/Typography';
 
 import ArrowDownIcon from '../../assets/svg/arrow-down.svg';
 import UserIcon from '../../assets/svg/user.svg';
@@ -10,21 +10,27 @@ import IconItem from '../../components/IconItem';
 export default function Menu() {
   const menuList = [
     // Temp language and currency IconItems while we get select menus
-    { icon: <ArrowDownIcon />, text: <Sub4>English</Sub4> },
-    { icon: <ArrowDownIcon />, text: <Sub4>USD</Sub4> },
-    { icon: <UserIcon />, text: <Sub4>Login</Sub4> },
-    { icon: <HeartIcon />, text: <Sub4>Wishlist</Sub4> },
+    {
+      icon: <ArrowDownIcon />,
+      text: <Typography type="sub4">English</Typography>,
+    },
+    { icon: <ArrowDownIcon />, text: <Typography type="sub4">USD</Typography> },
+    { icon: <UserIcon />, text: <Typography type="sub4">Login</Typography> },
+    {
+      icon: <HeartIcon />,
+      text: <Typography type="sub4">Wishlist</Typography>,
+    },
     <CartIcon className="text-white" />,
   ];
 
   return (
-    <List list={menuList} keyFn={(_, index) => index} style="gap-32">
+    <List list={menuList} keyFn={(_, index) => index} classes="gap-32">
       {(item) =>
         item.text ? (
           <IconItem
             icon={item.icon}
             text={item.text}
-            style="gap-4 text-white"
+            classes="gap-4 text-white"
             forward={false}
           />
         ) : (

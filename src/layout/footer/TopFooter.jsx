@@ -35,8 +35,8 @@ export default function TopFooter() {
   ];
 
   return (
-    <section className="pb-128 px-sides pt-96">
-      <List list={footerColumns} keyFn={(_, index) => index} style="gap-128">
+    <section className="px-sides pb-128 pt-96">
+      <List list={footerColumns} keyFn={(_, index) => index} classes="gap-128">
         {(item) => item}
       </List>
     </section>

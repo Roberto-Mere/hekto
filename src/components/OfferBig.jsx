@@ -1,13 +1,13 @@
 import Offer1 from '../assets/svg/offer-1.svg';
-import H3 from '../typography/heading/H3';
+import Typography from './Typography';
 
-export default function OfferBig({ discount, style = '' }) {
+export default function OfferBig({ discount, classes = '' }) {
   return (
-    <div className={`grid w-max items-center justify-items-center ${style}`}>
+    <div className={`grid w-max items-center justify-items-center ${classes}`}>
       <Offer1 className="grid-overlap text-info" />
-      <H3 style="grid-overlap text-white">
+      <Typography type="h3" classes="grid-overlap text-white">
         {discount}% <span className="block">off</span>
-      </H3>
+      </Typography>
     </div>
   );
 }

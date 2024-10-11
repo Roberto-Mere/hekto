@@ -1,8 +1,8 @@
-export default function List({ list, children, keyFn, style = '' }) {
+export default function List({ list, children, keyFn, classes = '' }) {
   return (
-    <ul className={`flex ${style}`}>
+    <ul className={`flex ${classes}`}>
       {list.map((item, index) => (
-        <li key={keyFn(item, index)}>{children(item)}</li>
+        <li key={keyFn(item, index)}>{children(item, index)}</li>
       ))}
     </ul>
   );

@@ -1,14 +1,15 @@
 import Button from '../../../components/Button';
-import H2 from '../../../typography/heading/H2';
-import Sub4 from '../../../typography/subtitle/Sub4';
+import Typography from '../../../components/Typography';
 
 export default function Newsletter() {
   return (
-    <section className="bg-newsletter py-128 bg-bottom-4 flex justify-center bg-cover">
+    <section className="flex justify-center bg-newsletter bg-cover bg-bottom-4 py-128">
       <div className="flex max-w-[78.6rem] flex-col items-center gap-64 text-center">
-        <H2>Get Latest Update By Subscribing To 0ur Newsletter</H2>
+        <Typography type="h2">
+          Get Latest Update By Subscribing To 0ur Newsletter
+        </Typography>
         <Button>
-          <Sub4>Subscribe</Sub4>
+          <Typography type="sub4">Subscribe</Typography>
         </Button>
       </div>
     </section>
