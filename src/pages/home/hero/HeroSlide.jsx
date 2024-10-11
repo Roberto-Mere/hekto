@@ -4,7 +4,7 @@ import Typography from '../../../components/Typography';
 
 export default function HeroSlide({ legend, title, description, image }) {
   return (
-    <div className={`pr-auto flex items-center gap-64 py-48 pl-[42rem]`}>
+    <div className={`flex items-center gap-64 py-48 pl-[42rem]`}>
       <div className="max-w-[60rem]">
         <div className="mb-24 flex flex-col gap-16">
           <Typography type="body-bold" classes="text-primary">

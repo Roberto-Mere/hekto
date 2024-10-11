@@ -1,9 +1,8 @@
-import Dot from '../../../components/Dot';
 import ButtonSlider from '../../../components/ButtonSlider';
 import HeroSlide from './HeroSlide';
 
 import headphones from '../../../assets/image/headphones.png';
-import headlamp from '../../../assets/image/headlamp.png';
+import Lamp from '../../../components/Lamp';
 
 export default function Hero() {
   const slidesContent = [
@@ -39,18 +38,26 @@ export default function Hero() {
     },
   ];
 
-  const slides = slidesContent.map((content) => <HeroSlide {...content} />);
+  const slides = [
+    <HeroSlide {...slidesContent[0]} />,
+    <HeroSlide {...slidesContent[1]} />,
+    '',
+  ];
+
+  function getNextSlide(slide) {
+    return new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(<HeroSlide {...slidesContent[slide]} />);
+      }, 1000),
+    );
+  }
 
   return (
-    <section className="relative bg-background">
-      <img
-        src={headlamp}
-        alt="Headlamp"
-        className="absolute z-10 ml-64 h-[38rem] w-auto"
-      />
-      <Dot classes="absolute left-192 top-3/4 h-16 w-16 bg-primary z-10" />
+    <section className="relative overflow-hidden bg-background">
+      <Lamp />
       <ButtonSlider
         slides={slides}
+        getNextSlide={getNextSlide}
         btnType="romboid"
         btnClasses="gap-16 justify-center"
       />
