@@ -40,6 +40,7 @@ export default {
       h4: ['2.8rem', '3.6rem'],
     },
     spacing: {
+      0: '0',
       4: '0.4rem',
       8: '0.8rem',
       12: '1.2rem',
