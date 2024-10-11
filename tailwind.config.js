@@ -3,6 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
+      transparent: 'transparent',
       white: '#ffffff',
       'gray-1': '#f8f8fd',
       'gray-2': '#e5e0fc',
@@ -21,6 +22,7 @@ export default {
       success: '#0cc562',
       'success-dark': '#00994c',
       'success-light': '#92f2bf',
+      background: '#f2f0ff',
     },
     fontFamily: {
       lato: ['Lato', 'Helvetica', 'Arial', 'sans-serif'],
@@ -38,6 +40,7 @@ export default {
       h4: ['2.8rem', '3.6rem'],
     },
     spacing: {
+      0: '0',
       4: '0.4rem',
       8: '0.8rem',
       12: '1.2rem',
@@ -46,9 +49,10 @@ export default {
       32: '3.2rem',
       40: '4rem',
       48: '4.8rem',
-      60: '6rem',
+      64: '6.4rem',
       96: '9.6rem',
       128: '12.8rem',
+      192: '19.2rem',
     },
     extend: {
       letterSpacing: {

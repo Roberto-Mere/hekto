@@ -6,7 +6,7 @@ import SearchIcon from '../../assets/svg/search.svg';
 
 export default function NavBar() {
   return (
-    <nav className="px-sides flex py-24">
+    <nav className="flex items-center px-sides py-16">
       <Logo />
       <Links />
       <ComplexInput

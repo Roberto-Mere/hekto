@@ -1,3 +1,3 @@
-export default function Dot({ style }) {
-  return <div className={`rounded-full ${style}`}></div>;
+export default function Dot({ classes = '' }) {
+  return <div className={`rounded-full ${classes}`}></div>;
 }
