@@ -3,6 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
+      transparent: 'transparent',
       white: '#ffffff',
       'gray-1': '#f8f8fd',
       'gray-2': '#e5e0fc',
@@ -47,9 +48,10 @@ export default {
       32: '3.2rem',
       40: '4rem',
       48: '4.8rem',
-      64: '6rem',
+      64: '6.4rem',
       96: '9.6rem',
       128: '12.8rem',
+      192: '19.2rem',
     },
     extend: {
       letterSpacing: {
