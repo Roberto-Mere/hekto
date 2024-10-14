@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import List from '../../components/List';
+import List from '../../components/list/List';
 import Typography from '../../components/Typography';
 
 export default function Links() {

@@ -1,5 +1,5 @@
 import ComplexInput from '../../components/ComplexInput';
-import List from '../../components/List';
+import List from '../../components/list/List';
 import Logo from '../../components/Logo';
 import Typography from '../../components/Typography';
 

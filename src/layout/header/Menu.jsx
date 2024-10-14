@@ -1,4 +1,4 @@
-import List from '../../components/List';
+import List from '../../components/list/List';
 import Typography from '../../components/Typography';
 
 import ArrowDownIcon from '../../assets/svg/arrow-down.svg';

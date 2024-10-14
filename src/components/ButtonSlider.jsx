@@ -1,4 +1,4 @@
-import List from './List';
+import List from './list/List';
 import Romboid from '../assets/svg/romboid.svg';
 import { useState } from 'react';
 

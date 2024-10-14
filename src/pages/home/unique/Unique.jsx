@@ -1,6 +1,6 @@
 import Dot from '../../../components/Dot';
 import IconItem from '../../../components/IconItem';
-import List from '../../../components/List';
+import List from '../../../components/list/List';
 import Button from '../../../components/Button';
 import Typography from '../../../components/Typography';
 

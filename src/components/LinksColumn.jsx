@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import List from './List';
+import List from './list/List';
 import Typography from './Typography';
 
 export default function LinksColumn({ title, list }) {
