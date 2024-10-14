@@ -16,6 +16,11 @@ export default defineConfig({
       include: '**/*.svg',
     }),
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/testSetup.js',
+  },
   css: {
     postcss: {
       plugins: [tailwindcss()],
