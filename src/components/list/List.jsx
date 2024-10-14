@@ -8,8 +8,11 @@ export default function List({
   return (
     <ul className={`flex ${classes}`}>
       {list.map((item, index) => (
-        <li className={itemClasses} key={keyFn(item, index)}>
-          {children(item, index)}
+        <li
+          className={itemClasses ? itemClasses : null}
+          key={keyFn(item, index)}
+        >
+          {children(item)}
         </li>
       ))}
     </ul>
