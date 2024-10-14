@@ -1,5 +1,5 @@
-import List from './list/List';
-import Romboid from '../assets/svg/romboid.svg';
+import List from '../list/List';
+import Romboid from '../../assets/svg/romboid.svg';
 import { useState } from 'react';
 
 export default function ButtonSlider({

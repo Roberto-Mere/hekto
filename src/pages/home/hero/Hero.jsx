@@ -1,4 +1,4 @@
-import ButtonSlider from '../../../components/ButtonSlider';
+import ButtonSlider from '../../../components/button-slider/ButtonSlider';
 import HeroSlide from './HeroSlide';
 
 import headphones from '../../../assets/image/headphones.png';
