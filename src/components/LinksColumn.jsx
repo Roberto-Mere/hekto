@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import List from './list/List';
-import Typography from './Typography';
+import Typography from './typography/Typography';
 
 export default function LinksColumn({ title, list }) {
   return (

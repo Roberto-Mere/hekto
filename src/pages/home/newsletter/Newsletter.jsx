@@ -1,5 +1,5 @@
 import Button from '../../../components/Button';
-import Typography from '../../../components/Typography';
+import Typography from '../../../components/typography/Typography';
 
 export default function Newsletter() {
   return (

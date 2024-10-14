@@ -1,4 +1,4 @@
-import Typography from '../../components/Typography';
+import Typography from '../../components/typography/Typography';
 import Socials from './Socials';
 
 export default function BottomFooter() {

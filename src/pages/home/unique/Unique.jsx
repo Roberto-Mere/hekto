@@ -2,7 +2,7 @@ import Dot from '../../../components/Dot';
 import IconItem from '../../../components/IconItem';
 import List from '../../../components/list/List';
 import Button from '../../../components/Button';
-import Typography from '../../../components/Typography';
+import Typography from '../../../components/typography/Typography';
 
 import couchImage from '../../../assets/image/couch.png';
 import Decor from '../../../assets/svg/decor.svg';

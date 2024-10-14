@@ -1,5 +1,5 @@
 import List from '../../components/list/List';
-import Typography from '../../components/Typography';
+import Typography from '../../components/typography/Typography';
 
 import ArrowDownIcon from '../../assets/svg/arrow-down.svg';
 import UserIcon from '../../assets/svg/user.svg';
