@@ -5,14 +5,14 @@ import Rectangle from '../Rectangle';
 import Dot from '../Dot';
 
 export default function ButtonSlider({
-  slides,
+  initialSlides,
   fetchSlide,
-  btnType,
+  buttonType,
   classes = '',
-  btnClasses = '',
+  buttonsClasses = '',
 }) {
   const [currSlide, setCurrSlide] = useState(0);
-  const [currSlides, setCurrSlides] = useState(slides);
+  const [currSlides, setCurrSlides] = useState(initialSlides);
 
   async function goToSlide(slide) {
     setCurrSlide(slide);
@@ -57,7 +57,7 @@ export default function ButtonSlider({
   });
 
   return (
-    <div className={classes}>
+    <div className={classes ? classes : null} data-testid="slider">
       <List
         list={currSlides}
         keyFn={(_, index) => index}
@@ -68,12 +68,13 @@ export default function ButtonSlider({
           <div
             style={{ transform: `translateX(${-currSlide * 100}%)` }}
             className="transition-all duration-700 ease-in-out"
+            data-testid="slide"
           >
             {slide}
           </div>
         )}
       </List>
-      <List list={buttons} keyFn={(_, index) => index} classes={btnClasses}>
+      <List list={buttons} keyFn={(_, index) => index} classes={buttonsClasses}>
         {(btn) => btn}
       </List>
     </div>
