@@ -1,4 +1,4 @@
-import ComplexInput from '../../components/ComplexInput';
+import ComplexInput from '../../components/complex-input/ComplexInput';
 import Logo from '../../components/Logo';
 import Links from './Links';
 

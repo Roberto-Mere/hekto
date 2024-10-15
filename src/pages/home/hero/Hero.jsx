@@ -1,4 +1,4 @@
-import ButtonSlider from '../../../components/ButtonSlider';
+import ButtonSlider from '../../../components/button-slider/ButtonSlider';
 import HeroSlide from './HeroSlide';
 
 import headphones from '../../../assets/image/headphones.png';
@@ -56,10 +56,10 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-background">
       <Lamp />
       <ButtonSlider
-        slides={slides}
+        initialSlides={slides}
         fetchSlide={fetchSlide}
-        btnType="romboid"
-        btnClasses="gap-16 justify-center"
+        buttonType="romboid"
+        buttonsClasses="gap-16 justify-center"
       />
     </section>
   );

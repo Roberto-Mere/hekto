@@ -1,16 +1,18 @@
-import List from './List';
-import Romboid from '../assets/svg/romboid.svg';
 import { useState } from 'react';
+import List from '../list/List';
+import Romboid from '../../assets/svg/romboid.svg';
+import Rectangle from '../Rectangle';
+import Dot from '../Dot';
 
 export default function ButtonSlider({
-  slides,
+  initialSlides,
   fetchSlide,
-  btnType,
+  buttonType,
   classes = '',
-  btnClasses = '',
+  buttonsClasses = '',
 }) {
   const [currSlide, setCurrSlide] = useState(0);
-  const [currSlides, setCurrSlides] = useState(slides);
+  const [currSlides, setCurrSlides] = useState(initialSlides);
 
   async function goToSlide(slide) {
     setCurrSlide(slide);
@@ -36,21 +38,26 @@ export default function ButtonSlider({
     }
   }
 
-  const buttons = slides.map((_, index) => (
-    <button>
-      {btnType === 'romboid' ? (
-        <Romboid
-          className={currSlide === index ? 'text-primary' : 'text-transparent'}
-          onClick={() => goToSlide(index)}
-        />
-      ) : (
-        ''
-      )}
-    </button>
-  ));
+  const buttons = initialSlides.map((_, index) => {
+    const isActive = currSlide === index;
+
+    return (
+      <button onClick={() => goToSlide(index)}>
+        {buttonType === 'romboid' ? (
+          <Romboid className={isActive ? 'text-primary' : 'text-transparent'} />
+        ) : buttonType === 'rectangle' ? (
+          <Rectangle active={isActive} />
+        ) : (
+          <Dot
+            classes={`h-8 w-8 border border-primary ${isActive ? 'bg-primary' : ''}`}
+          />
+        )}
+      </button>
+    );
+  });
 
   return (
-    <div className={classes}>
+    <div className={classes ? classes : null} data-testid="slider">
       <List
         list={currSlides}
         keyFn={(_, index) => index}
@@ -61,12 +68,13 @@ export default function ButtonSlider({
           <div
             style={{ transform: `translateX(${-currSlide * 100}%)` }}
             className="transition-all duration-700 ease-in-out"
+            data-testid="slide"
           >
             {slide}
           </div>
         )}
       </List>
-      <List list={buttons} keyFn={(_, index) => index} classes={btnClasses}>
+      <List list={buttons} keyFn={(_, index) => index} classes={buttonsClasses}>
         {(btn) => btn}
       </List>
     </div>

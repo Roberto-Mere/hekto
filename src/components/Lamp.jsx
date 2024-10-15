@@ -16,7 +16,7 @@ export default function Lamp() {
         <img
           src={headlamp}
           alt="Headlamp"
-          className="hover:top-0 peer absolute -top-128 z-10 h-[38rem] w-auto transition-all duration-700 ease-in-out"
+          className="peer absolute -top-128 z-10 h-[38rem] w-auto transition-all duration-700 ease-in-out hover:top-0"
         />
         {isTurnedOn ? (
           <Light className="absolute left-12 top-[20rem] text-background opacity-75 transition-all duration-700 ease-in-out peer-hover:top-[32rem]" />
@@ -24,7 +24,7 @@ export default function Lamp() {
           ''
         )}
       </div>
-      <button className="absolute left-128 top-[64rem]" onClick={toggleLight}>
+      <button className="absolute left-128 top-[48rem]" onClick={toggleLight}>
         <Dot classes="h-16 w-16 bg-primary" />
       </button>
     </div>

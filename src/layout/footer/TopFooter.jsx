@@ -1,5 +1,5 @@
 import LinksColumn from '../../components/LinksColumn';
-import List from '../../components/List';
+import List from '../../components/list/List';
 import FooterSignUp from './FooterSignUp';
 
 export default function TopFooter() {

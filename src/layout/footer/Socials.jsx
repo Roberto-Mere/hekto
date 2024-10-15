@@ -1,4 +1,4 @@
-import List from '../../components/List';
+import List from '../../components/list/List';
 import { Link } from 'react-router-dom';
 
 import Facebook from '../../assets/svg/facebook.svg';

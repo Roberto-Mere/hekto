@@ -1,7 +1,7 @@
-import ComplexInput from '../../components/ComplexInput';
-import List from '../../components/List';
+import ComplexInput from '../../components/complex-input/ComplexInput';
+import List from '../../components/list/List';
 import Logo from '../../components/Logo';
-import Typography from '../../components/Typography';
+import Typography from '../../components/typography/Typography';
 
 export default function FooterSignUp() {
   const list = [

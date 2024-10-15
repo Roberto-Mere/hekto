@@ -1,4 +1,4 @@
-export default function Typography({ children, type, classes = '' }) {
+export default function Typography({ children, type = 'body', classes = '' }) {
   let Tag = 'p';
   let baseClasses;
 

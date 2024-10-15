@@ -1,6 +1,6 @@
-import List from '../../components/List';
+import List from '../../components/list/List';
 import IconItem from '../../components/IconItem';
-import Typography from '../../components/Typography';
+import Typography from '../../components/typography/Typography';
 
 import EmailIcon from '../../assets/svg/email.svg';
 import TelephoneIcon from '../../assets/svg/telephone.svg';

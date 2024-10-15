@@ -1,5 +1,5 @@
 import Offer1 from '../assets/svg/offer-1.svg';
-import Typography from './Typography';
+import Typography from './typography/Typography';
 
 export default function OfferBig({ discount, classes = '' }) {
   return (
