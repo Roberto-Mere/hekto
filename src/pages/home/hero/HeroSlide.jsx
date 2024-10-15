@@ -1,4 +1,4 @@
-import Button from '../../../components/Button';
+import Button from '../../../components/button/Button';
 import PromotionImage from '../../../components/PromotionImage';
 import Typography from '../../../components/typography/Typography';
 

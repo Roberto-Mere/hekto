@@ -1,4 +1,4 @@
-import Button from '../Button';
+import Button from '../button/Button';
 
 export default function ComplexInput({
   type = 'text',
