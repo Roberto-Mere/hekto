@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import List from '../list/List';
 import Romboid from '../../assets/svg/romboid.svg';
-import { useState } from 'react';
+import Rectangle from '../Rectangle';
+import Dot from '../Dot';
 
 export default function ButtonSlider({
   slides,
@@ -36,18 +38,23 @@ export default function ButtonSlider({
     }
   }
 
-  const buttons = slides.map((_, index) => (
-    <button>
-      {btnType === 'romboid' ? (
-        <Romboid
-          className={currSlide === index ? 'text-primary' : 'text-transparent'}
-          onClick={() => goToSlide(index)}
-        />
-      ) : (
-        ''
-      )}
-    </button>
-  ));
+  const buttons = initialSlides.map((_, index) => {
+    const isActive = currSlide === index;
+
+    return (
+      <button onClick={() => goToSlide(index)}>
+        {buttonType === 'romboid' ? (
+          <Romboid className={isActive ? 'text-primary' : 'text-transparent'} />
+        ) : buttonType === 'rectangle' ? (
+          <Rectangle active={isActive} />
+        ) : (
+          <Dot
+            classes={`h-8 w-8 border border-primary ${isActive ? 'bg-primary' : ''}`}
+          />
+        )}
+      </button>
+    );
+  });
 
   return (
     <div className={classes}>
