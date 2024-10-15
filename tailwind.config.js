@@ -67,6 +67,10 @@ export default {
       backgroundPosition: {
         'bottom-4': 'bottom 15% center',
       },
+      boxShadow: {
+        normal: '0.8rem 2.4rem 3.2rem -1.6rem #10175026',
+        large: '0.8rem 6.4rem 8rem -1.6rem #10175026',
+      },
     },
   },
   plugins: [],
