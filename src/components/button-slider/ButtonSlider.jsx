@@ -3,6 +3,7 @@ import List from '../list/List';
 import Romboid from '../../assets/svg/romboid.svg';
 import Rectangle from '../Rectangle';
 import Dot from '../Dot';
+import Loader from '../Loader';
 
 export default function ButtonSlider({
   initialSlides,
@@ -67,10 +68,10 @@ export default function ButtonSlider({
         {(slide) => (
           <div
             style={{ transform: `translateX(${-currSlide * 100}%)` }}
-            className="transition-all duration-700 ease-in-out"
+            className="h-full transition-all duration-700 ease-in-out"
             data-testid="slide"
           >
-            {slide}
+            {slide ? slide : <Loader />}
           </div>
         )}
       </List>
