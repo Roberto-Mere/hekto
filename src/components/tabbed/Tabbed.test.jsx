@@ -98,23 +98,19 @@ describe('Tabbed component', () => {
     expect(fetchTabContent).toHaveBeenCalledOnce();
   });
 
-  it('should add tab button classes when passed', () => {
+  it('should add tab button container classes when passed', () => {
     const tabs = [
       { name: '1', content: 'Tab 1' },
       { name: '2', content: 'Tab 2' },
       { name: '3', content: 'Tab 3' },
     ];
 
-    render(<Tabbed tabs={tabs} buttonClasses="test" />);
+    render(<Tabbed tabs={tabs} buttonsClasses="test" />);
 
-    const buttons = screen.getAllByRole('button');
-
-    expect(buttons[0]).toHaveClass('test');
-    expect(buttons[0]).toHaveClass('test');
-    expect(buttons[0]).toHaveClass('test');
+    expect(screen.getByRole('list')).toHaveClass('test');
   });
 
-  it('should not add tab button classes when not passed', () => {
+  it('should not add tab button container classes when not passed', () => {
     const tabs = [
       { name: '1', content: 'Tab 1' },
       { name: '2', content: 'Tab 2' },
@@ -123,10 +119,6 @@ describe('Tabbed component', () => {
 
     render(<Tabbed tabs={tabs} />);
 
-    const buttons = screen.getAllByRole('button');
-
-    expect(buttons[0]).toHaveClass('', { exact: true });
-    expect(buttons[0]).toHaveClass('', { exact: true });
-    expect(buttons[0]).toHaveClass('', { exact: true });
+    expect(screen.getByRole('list')).toHaveClass('flex', { exact: true });
   });
 });
