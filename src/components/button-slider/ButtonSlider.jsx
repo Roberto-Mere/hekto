@@ -66,10 +66,10 @@ export default function ButtonSlider({
         classes="overflow-x-clip"
         itemClasses="shrink-0 basis-full"
       >
-        {(slide) => (
+        {(slide, index) => (
           <div
             style={{ transform: `translateX(${-currSlide * 100}%)` }}
-            className="h-full transition-all duration-700 ease-in-out"
+            className={`h-full transition-all duration-700 ease-in-out ${currSlide !== index ? 'invisible' : ''}`}
             data-testid="slide"
           >
             {slide}

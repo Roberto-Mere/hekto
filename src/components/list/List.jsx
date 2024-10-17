@@ -12,7 +12,7 @@ export default function List({
           className={itemClasses ? itemClasses : null}
           key={keyFn(item, index)}
         >
-          {children(item)}
+          {children(item, index)}
         </li>
       ))}
     </ul>
