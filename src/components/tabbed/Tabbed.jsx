@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import List from '../list/List';
 
-export default function Tabbed({ tabs, fetchTabContent, buttonClasses = '' }) {
+export default function Tabbed({
+  tabs,
+  fetchTabContent,
+  tabType,
+  buttonsClasses = '',
+}) {
   const [activeTab, setActiveTab] = useState(0);
   const [tabsContent, setTabsContent] = useState(
     tabs.map(({ content }) => (content ? content : null)),
@@ -24,12 +29,9 @@ export default function Tabbed({ tabs, fetchTabContent, buttonClasses = '' }) {
 
   return (
     <div>
-      <List list={tabs} keyFn={(tab) => tab.name}>
+      <List list={tabs} keyFn={(tab) => tab.name} classes={`${buttonsClasses}`}>
         {(tab, index) => (
-          <button
-            className={`${buttonClasses}`}
-            onClick={() => changeTab(index)}
-          >
+          <button className="" onClick={() => changeTab(index)}>
             {tab.name}
           </button>
         )}
