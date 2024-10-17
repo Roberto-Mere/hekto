@@ -17,6 +17,18 @@ describe('Button component', () => {
     expect(screen.getByRole('button').textContent).toEqual(content);
   });
 
+  it('should have the background color class passed', () => {
+    render(<Button backgroundColor="bg-test" />);
+
+    expect(screen.getByRole('button')).toHaveClass('bg-test');
+  });
+
+  it('should have the text color class passed', () => {
+    render(<Button textColor="text-test" />);
+
+    expect(screen.getByRole('button')).toHaveClass('text-test');
+  });
+
   it('should have different classes based on size passed', () => {
     render(<Button />);
     render(<Button size="small" />);
