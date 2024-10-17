@@ -3,7 +3,6 @@ import List from '../list/List';
 import Romboid from '../../assets/svg/romboid.svg';
 import Rectangle from '../Rectangle';
 import Dot from '../Dot';
-import Loader from '../Loader';
 
 export default function ButtonSlider({
   initialSlides,
@@ -27,7 +26,9 @@ export default function ButtonSlider({
 
         return newSlides;
       });
-    } else if (!currSlides[slide]) {
+    }
+
+    if (!currSlides[slide]) {
       const nextSlide = await fetchSlide(slide);
 
       setCurrSlides((prevSlides) => {
@@ -47,7 +48,7 @@ export default function ButtonSlider({
         {buttonType === 'romboid' ? (
           <Romboid className={isActive ? 'text-primary' : 'text-transparent'} />
         ) : buttonType === 'rectangle' ? (
-          <Rectangle active={isActive} />
+          <Rectangle isActive={isActive} />
         ) : (
           <Dot
             classes={`h-8 w-8 border border-primary ${isActive ? 'bg-primary' : ''}`}
@@ -62,8 +63,8 @@ export default function ButtonSlider({
       <List
         list={currSlides}
         keyFn={(_, index) => index}
-        classes={`overflow-hidden`}
-        itemClasses="basis-full shrink-0"
+        classes="overflow-x-clip"
+        itemClasses="shrink-0 basis-full"
       >
         {(slide) => (
           <div
@@ -71,7 +72,7 @@ export default function ButtonSlider({
             className="h-full transition-all duration-700 ease-in-out"
             data-testid="slide"
           >
-            {slide ? slide : <Loader />}
+            {slide}
           </div>
         )}
       </List>
