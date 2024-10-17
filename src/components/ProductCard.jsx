@@ -14,8 +14,8 @@ export default function ProductCard({
   price,
 }) {
   return (
-    <article className="shadow-normal focus-within:shadow-large hover:shadow-large grid-product group grid basis-full rounded-xl transition-all duration-300 ease-out focus-within:-translate-y-24 hover:-translate-y-24">
-      <div className="grid-overlap peer z-10 p-8">
+    <article className="grid-product group grid basis-full rounded-xl shadow-normal transition-all duration-300 ease-out focus-within:-translate-y-24 focus-within:shadow-large hover:-translate-y-24 hover:shadow-large">
+      <div className="grid-overlap peer invisible z-10 p-8 opacity-0 transition-all duration-100 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
         <IconButton
           color="text-tertiary"
           backgroundColor="hover:bg-gray-2 focus:bg-gray-2"
