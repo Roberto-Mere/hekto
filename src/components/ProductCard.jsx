@@ -15,7 +15,7 @@ export default function ProductCard({
 }) {
   return (
     <article className="grid-product group grid basis-full rounded-xl shadow-normal transition-all duration-300 ease-out focus-within:-translate-y-24 focus-within:shadow-large hover:-translate-y-24 hover:shadow-large">
-      <div className="grid-overlap peer invisible z-10 p-8 opacity-0 transition-all duration-100 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+      <div className="grid-overlap z-10 p-8 opacity-0 transition-all duration-100 group-focus-within:opacity-100 group-hover:opacity-100">
         <IconButton
           color="text-tertiary"
           backgroundColor="hover:bg-gray-2 focus:bg-gray-2"
@@ -42,7 +42,7 @@ export default function ProductCard({
       />
       <Link
         to={`/products/${id}`}
-        className="grid-overlap invisible z-10 mb-4 self-end justify-self-center rounded-xl opacity-0 transition-all duration-100 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100"
+        className="grid-overlap z-10 mb-4 self-end justify-self-center rounded-xl opacity-0 transition-all duration-100 group-focus-within:opacity-100 group-hover:opacity-100"
       >
         <Button size="small" backgroundColor="bg-success" tabIndex={-1}>
           <Typography type="label-small">View Details</Typography>
