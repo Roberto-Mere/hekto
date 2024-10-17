@@ -20,6 +20,10 @@
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
+
+  .grid-product {
+    grid-template-rows: 1fr max-content;
+  }
 }
 
 @layer components {
