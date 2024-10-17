@@ -1,4 +1,5 @@
 import Blogs from './blogs/Blogs';
+import Categories from './categories/Categories';
 import Featured from './featured/Featured';
 import Hero from './hero/Hero';
 import Newsletter from './newsletter/Newsletter';
@@ -12,6 +13,7 @@ export default function Home() {
       <Featured />
       <Unique />
       <Trending />
+      <Categories />
       <Newsletter />
       <Blogs />
     </main>
