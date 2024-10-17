@@ -6,7 +6,7 @@ import List from '../../../components/list/List';
 import Typography from '../../../components/typography/Typography';
 
 export default function Blogs() {
-  const { isPending, data } = useQuery({
+  const { status, data } = useQuery({
     queryKey: ['blogs'],
     queryFn: fetchBlogs,
   });
@@ -16,7 +16,7 @@ export default function Blogs() {
       <Typography type="h2" classes="mb-64">
         Latest Blog
       </Typography>
-      {isPending ? (
+      {status === 'pending' ? (
         <Loader />
       ) : (
         <List
