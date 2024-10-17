@@ -4,6 +4,7 @@ import Loader from '../../../components/Loader';
 import { fetchBlogs } from '../../../http';
 import List from '../../../components/list/List';
 import Typography from '../../../components/typography/Typography';
+import Preloader from '../../../components/Preloader';
 
 export default function Blogs() {
   const { status, data } = useQuery({
@@ -17,7 +18,14 @@ export default function Blogs() {
         Latest Blog
       </Typography>
       {status === 'pending' ? (
-        <Loader />
+        <List
+          list={Array(3).fill(null)}
+          keyFn={(_, index) => index}
+          classes="gap-32 w-full"
+          itemClasses="basis-full flex"
+        >
+          {(_) => <Preloader height="h-[51rem]" />}
+        </List>
       ) : (
         <List
           list={data}
