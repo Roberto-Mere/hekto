@@ -38,7 +38,7 @@ export default function Hero() {
     },
   ];
 
-  const slides = [
+  const initialSlides = [
     <HeroSlide {...slidesContent[0]} />,
     <HeroSlide {...slidesContent[1]} />,
     '',
@@ -53,10 +53,10 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section className="relative overflow-hidden bg-background pb-40">
       <Lamp />
       <ButtonSlider
-        initialSlides={slides}
+        initialSlides={initialSlides}
         fetchSlide={fetchSlide}
         buttonType="romboid"
         buttonsClasses="gap-16 justify-center"
