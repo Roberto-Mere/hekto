@@ -1,9 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchProductSlide } from '../../../http';
-import Loader from '../../../components/Loader';
 import ProductCard from '../../../components/ProductCard';
 import List from '../../../components/list/List';
-import ProductCardPreloader from '../../../components/ProductCardPreloader';
+import Preloader from '../../../components/Preloader';
 
 export default function FeaturedSlide({ slide }) {
   const { data, status } = useQuery({
@@ -15,19 +14,19 @@ export default function FeaturedSlide({ slide }) {
     <>
       {status == 'pending' ? (
         <List
-          list={['', '', '', '']}
+          list={Array(4).fill(null)}
           keyFn={(_, index) => index}
-          itemClasses="basis-full flex"
-          classes="h-full w-full gap-32 px-[6rem]"
+          itemClasses="basis-full"
+          classes="gap-32 px-[6rem]"
         >
-          {(_) => <ProductCardPreloader />}
+          {(_) => <Preloader height="h-[36.8rem]" />}
         </List>
       ) : (
         <List
           list={data}
           keyFn={(item) => item.id}
-          itemClasses="basis-full flex"
-          classes="h-full w-full gap-32 px-[6rem]"
+          itemClasses="basis-full flex h-[36.8rem]"
+          classes="gap-32 px-[6rem]"
         >
           {(item) => <ProductCard {...item} />}
         </List>
