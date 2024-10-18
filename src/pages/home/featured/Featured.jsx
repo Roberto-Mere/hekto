@@ -1,19 +1,9 @@
 import ButtonSlider from '../../../components/button-slider/ButtonSlider';
 import Typography from '../../../components/typography/Typography';
-import Loader from '../../../components/Loader';
 import FeaturedSlide from './FeaturedSlide';
 
 export default function Featured() {
-  function fetchSlide(slide) {
-    return <FeaturedSlide slide={slide} />;
-  }
-
-  const initialSlides = [
-    <FeaturedSlide slide={0} />,
-    <FeaturedSlide slide={1} />,
-    '',
-    '',
-  ];
+  const initialSlides = [true, true, false, false];
 
   return (
     <section className="flex flex-col px-[24.2rem] py-96">
@@ -22,7 +12,7 @@ export default function Featured() {
       </Typography>
       <ButtonSlider
         initialSlides={initialSlides}
-        fetchSlide={fetchSlide}
+        RenderFn={FeaturedSlide}
         buttonType="rectangle"
         buttonsClasses="gap-8 mt-64 justify-center"
       />

@@ -1,6 +1,5 @@
 import ButtonSlider from '../../../components/button-slider/ButtonSlider';
 import HeroSlide from './HeroSlide';
-
 import headphones from '../../../assets/image/headphones.png';
 import Lamp from '../../../components/Lamp';
 
@@ -38,26 +37,14 @@ export default function Hero() {
     },
   ];
 
-  const initialSlides = [
-    <HeroSlide {...slidesContent[0]} />,
-    <HeroSlide {...slidesContent[1]} />,
-    '',
-  ];
-
-  function fetchSlide(slide) {
-    return new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(<HeroSlide {...slidesContent[slide]} />);
-      }, 1000),
-    );
-  }
+  const initialSlides = [true, true, false];
 
   return (
     <section className="relative overflow-hidden bg-background pb-40">
       <Lamp />
       <ButtonSlider
         initialSlides={initialSlides}
-        fetchSlide={fetchSlide}
+        RenderFn={({ slide }) => <HeroSlide {...slidesContent[slide]} />}
         buttonType="romboid"
         buttonsClasses="gap-16 justify-center"
       />
