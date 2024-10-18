@@ -6,7 +6,7 @@ import Dot from '../Dot';
 
 export default function ButtonSlider({
   initialSlides,
-  RenderFn = () => null,
+  RenderFn,
   buttonType,
   classes = '',
   buttonsClasses = '',
@@ -14,7 +14,7 @@ export default function ButtonSlider({
   const [activeSlide, setActiveSlide] = useState(0);
   const [fetchedSlides, setFetchedSlides] = useState(initialSlides);
 
-  async function goToSlide(slide) {
+  function goToSlide(slide) {
     setActiveSlide(slide);
 
     if (slide + 1 !== fetchedSlides.length && !fetchedSlides[slide + 1]) {

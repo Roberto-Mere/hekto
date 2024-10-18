@@ -35,25 +35,38 @@ describe('Button slider component', () => {
 
   it('should add additional classes to slider when passed', () => {
     const initialSlides = [true, true, true];
+    const RenderFn = vi.fn();
 
-    render(<ButtonSlider initialSlides={initialSlides} classes="test" />);
+    render(
+      <ButtonSlider
+        initialSlides={initialSlides}
+        classes="test"
+        RenderFn={RenderFn}
+      />,
+    );
 
     expect(screen.getByTestId('slider')).toHaveClass('test');
   });
 
   it('should not add classes to slider when not passed', () => {
     const initialSlides = [true, true, true];
+    const RenderFn = vi.fn();
 
-    render(<ButtonSlider initialSlides={initialSlides} />);
+    render(<ButtonSlider initialSlides={initialSlides} RenderFn={RenderFn} />);
 
     expect(screen.getByTestId('slider')).not.toHaveAttribute('class');
   });
 
   it('should add additional classes to buttons list when passed', () => {
     const initialSlides = [true, true, true];
+    const RenderFn = vi.fn();
 
     render(
-      <ButtonSlider initialSlides={initialSlides} buttonsClasses="test" />,
+      <ButtonSlider
+        initialSlides={initialSlides}
+        buttonsClasses="test"
+        RenderFn={RenderFn}
+      />,
     );
 
     expect(screen.getAllByRole('list')[1]).toHaveClass('test');
@@ -61,16 +74,18 @@ describe('Button slider component', () => {
 
   it('should not add classes to buttons list when not passed', () => {
     const initialSlides = [true, true, true];
+    const RenderFn = vi.fn();
 
-    render(<ButtonSlider initialSlides={initialSlides} />);
+    render(<ButtonSlider initialSlides={initialSlides} RenderFn={RenderFn} />);
 
     expect(screen.getAllByRole('list')[1]).toHaveClass('flex', { exact: true });
   });
 
   it('should translate slides according to active slide', async () => {
     const initialSlides = [true, true, true];
+    const RenderFn = vi.fn();
 
-    render(<ButtonSlider initialSlides={initialSlides} />);
+    render(<ButtonSlider initialSlides={initialSlides} RenderFn={RenderFn} />);
 
     const slides = screen.getAllByTestId('slide');
     const buttons = screen.getAllByRole('button');
