@@ -6,6 +6,7 @@ import Dot from '../Dot';
 
 export default function ButtonSlider({
   initialSlides,
+  RenderFn,
   fetchSlide,
   buttonType,
   classes = '',
@@ -72,7 +73,7 @@ export default function ButtonSlider({
             className={`h-full transition-all duration-700 ease-in-out ${currSlide !== index ? 'group/hidden' : ''}`}
             data-testid="slide"
           >
-            {slide}
+            {RenderFn ? <RenderFn slide={slide}></RenderFn> : slide}
           </div>
         )}
       </List>
