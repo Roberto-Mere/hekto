@@ -4,10 +4,12 @@ import userEvent from '@testing-library/user-event';
 import { expect, it, vi } from 'vitest';
 
 describe('Button slider component', () => {
-  it('should render lists of buttons and slides for each slide passed', () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+  it('should render lists of buttons and slides using passed initial slides', () => {
+    const initialSlides = [true, true, true];
+    const slidesData = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const RenderFn = ({ slide }) => <p>{slidesData[slide]}</p>;
 
-    render(<ButtonSlider initialSlides={initialSlides} />);
+    render(<ButtonSlider initialSlides={initialSlides} RenderFn={RenderFn} />);
 
     const lists = screen.getAllByRole('list');
 
@@ -21,7 +23,7 @@ describe('Button slider component', () => {
   });
 
   it('should use slide component function passed to render slides', () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const initialSlides = [true, true, true];
 
     const RenderFn = vi.fn(({ slide }) => <h1>{slide}</h1>);
 
@@ -32,7 +34,7 @@ describe('Button slider component', () => {
   });
 
   it('should add additional classes to slider when passed', () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const initialSlides = [true, true, true];
 
     render(<ButtonSlider initialSlides={initialSlides} classes="test" />);
 
@@ -40,7 +42,7 @@ describe('Button slider component', () => {
   });
 
   it('should not add classes to slider when not passed', () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const initialSlides = [true, true, true];
 
     render(<ButtonSlider initialSlides={initialSlides} />);
 
@@ -48,7 +50,7 @@ describe('Button slider component', () => {
   });
 
   it('should add additional classes to buttons list when passed', () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const initialSlides = [true, true, true];
 
     render(
       <ButtonSlider initialSlides={initialSlides} buttonsClasses="test" />,
@@ -58,7 +60,7 @@ describe('Button slider component', () => {
   });
 
   it('should not add classes to buttons list when not passed', () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const initialSlides = [true, true, true];
 
     render(<ButtonSlider initialSlides={initialSlides} />);
 
@@ -66,7 +68,7 @@ describe('Button slider component', () => {
   });
 
   it('should translate slides according to active slide', async () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const initialSlides = [true, true, true];
 
     render(<ButtonSlider initialSlides={initialSlides} />);
 
@@ -85,7 +87,7 @@ describe('Button slider component', () => {
   });
 
   it('should fetch next slide data when clicking on slide', async () => {
-    const initialSlides = ['Slide 1', 'Slide 2', ''];
+    const initialSlides = [true, true, false];
     const fetchSlide = vi.fn(() => new Promise((resolve) => resolve('Slide')));
 
     render(
@@ -100,7 +102,7 @@ describe('Button slider component', () => {
   });
 
   it('should fetch current slide when clicking on slide button if it doesnt exist', async () => {
-    const initialSlides = ['Slide 1', 'Slide 2', ''];
+    const initialSlides = [true, true, false];
     const fetchSlide = vi.fn(() => new Promise((resolve) => resolve('Slide')));
 
     render(
@@ -115,7 +117,7 @@ describe('Button slider component', () => {
   });
 
   it('should not fetch next slide if slide already exists', async () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const initialSlides = [true, true, true];
     const fetchSlide = vi.fn(() => new Promise((resolve) => resolve('Slide')));
 
     render(
@@ -130,7 +132,7 @@ describe('Button slider component', () => {
   });
 
   it('should not fetch next slide if slide button clicked is the last one', async () => {
-    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+    const initialSlides = [true, true, true];
     const fetchSlide = vi.fn(() => new Promise((resolve) => resolve('Slide')));
 
     render(
@@ -145,7 +147,7 @@ describe('Button slider component', () => {
   });
 
   it('should not fetch next slide when slide has already been fetched', async () => {
-    const initialSlides = ['Slide 1', 'Slide 2', ''];
+    const initialSlides = [true, true, false];
     const fetchSlide = vi.fn(() => new Promise((resolve) => resolve('Slide')));
 
     render(
