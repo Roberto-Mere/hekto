@@ -1,5 +1,5 @@
 import ButtonSlider from './ButtonSlider';
-import { render, screen } from '@testing-library/react';
+import { getAllByRole, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, it, vi } from 'vitest';
 
@@ -22,7 +22,7 @@ describe('Button slider component', () => {
     expect(lists[1]).toContainElement(...screen.getAllByRole('button'));
   });
 
-  it('should use slide component function passed to render slides', () => {
+  it('should use render function passed to render slides', () => {
     const initialSlides = [true, true, true];
 
     const RenderFn = vi.fn(({ slide }) => <h1>{slide}</h1>);
@@ -31,6 +31,20 @@ describe('Button slider component', () => {
 
     expect(RenderFn).toHaveBeenCalledTimes(3);
     expect(screen.getAllByRole('heading')).toHaveLength(3);
+  });
+
+  it('should render slides based on initial slides active', () => {
+    const initialSlides = [true, true, false, true];
+    const slidesData = ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4'];
+    const RenderFn = vi.fn(({ slide }) => slidesData[slide]);
+
+    render(<ButtonSlider initialSlides={initialSlides} RenderFn={RenderFn} />);
+
+    const slides = screen.getAllByRole('listitem');
+
+    expect(slides[0]).toContainElement(screen.getByText(slidesData[0]));
+    expect(slides[1]).toContainElement(screen.getByText(slidesData[1]));
+    expect(slides[3]).toContainElement(screen.getByText(slidesData[3]));
   });
 
   it('should add additional classes to slider when passed', () => {
