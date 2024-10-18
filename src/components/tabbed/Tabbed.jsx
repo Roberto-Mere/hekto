@@ -1,43 +1,28 @@
 import { useState } from 'react';
 import List from '../list/List';
+import Typography from '../typography/Typography';
 
-export default function Tabbed({
-  tabs,
-  fetchTabContent,
-  tabType,
-  buttonsClasses = '',
-}) {
-  const [activeTab, setActiveTab] = useState(0);
-  const [tabsContent, setTabsContent] = useState(
-    tabs.map(({ content }) => (content ? content : null)),
-  );
+export default function Tabbed({ tabs, RenderFn, buttonsClasses = '' }) {
+  const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  async function changeTab(tab) {
+  function changeTab(tab) {
     setActiveTab(tab);
-
-    if (!tabsContent[tab]) {
-      const nextTabContent = await fetchTabContent();
-
-      setTabsContent((prevTabsContent) => {
-        const newTabsContent = [...prevTabsContent];
-        newTabsContent[tab] = nextTabContent;
-
-        return newTabsContent;
-      });
-    }
   }
 
   return (
     <div>
-      <List list={tabs} keyFn={(tab) => tab.name} classes={`${buttonsClasses}`}>
-        {(tab, index) => (
-          <button className="" onClick={() => changeTab(index)}>
-            {tab.name}
+      <List list={tabs} keyFn={(tab) => tab} classes={`${buttonsClasses}`}>
+        {(tab) => (
+          <button
+            className={`${activeTab === tab ? 'text-primary' : null}`}
+            onClick={() => changeTab(tab)}
+          >
+            <Typography type="body-large">{tab}</Typography>
           </button>
         )}
       </List>
       <article>
-        {tabsContent[activeTab] ? tabsContent[activeTab] : null}
+        <RenderFn tab={activeTab} />
       </article>
     </div>
   );
