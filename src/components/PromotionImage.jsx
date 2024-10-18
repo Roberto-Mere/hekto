@@ -4,7 +4,10 @@ import OfferBig from './OfferBig';
 
 export default function PromotionImage({ src, alt }) {
   return (
-    <Link to="#" className="group relative grid h-auto w-max">
+    <Link
+      to="#"
+      className="group relative grid h-auto w-max group-odd/hidden:invisible group-even/hidden:invisible"
+    >
       <Ellipse className="grid-overlap text-gray-3" />
       <Ellipse className="grid-overlap text-gray-2 transition-all duration-500 ease-out group-hover:-translate-y-24 group-hover:translate-x-48" />
       <img

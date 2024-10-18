@@ -69,7 +69,7 @@ export default function ButtonSlider({
         {(slide, index) => (
           <div
             style={{ transform: `translateX(${-currSlide * 100}%)` }}
-            className={`h-full transition-all duration-700 ease-in-out ${currSlide !== index ? 'invisible' : ''}`}
+            className={`h-full transition-all duration-700 ease-in-out ${currSlide !== index ? 'group/hidden' : ''}`}
             data-testid="slide"
           >
             {slide}
