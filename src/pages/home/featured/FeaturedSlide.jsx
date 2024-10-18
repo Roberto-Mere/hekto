@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchProductSlide } from '../../../http';
+import { fetchProductSlice } from '../../../http';
 import ProductCard from '../../../components/ProductCard';
 import List from '../../../components/list/List';
 import Preloader from '../../../components/Preloader';
@@ -7,7 +7,7 @@ import Preloader from '../../../components/Preloader';
 export default function FeaturedSlide({ slide }) {
   const { data, status } = useQuery({
     queryKey: ['featured', `${slide}`],
-    queryFn: () => fetchProductSlide(slide),
+    queryFn: () => fetchProductSlice(slide, 4),
   });
 
   return (

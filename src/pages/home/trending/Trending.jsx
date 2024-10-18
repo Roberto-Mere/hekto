@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchProductSlide } from '../../../http';
+import { fetchProductSlice } from '../../../http';
 import Typography from '../../../components/typography/Typography';
 import ProductCardSmall from '../../../components/ProductCardSmall';
 import Loader from '../../../components/Loader';
@@ -11,7 +11,7 @@ export default function Trending() {
 
   const { data, status } = useQuery({
     queryKey: ['trending'],
-    queryFn: () => fetchProductSlide(slide),
+    queryFn: () => fetchProductSlice(slide, 4),
   });
   return (
     <section className="flex flex-col items-center justify-center px-sides py-96">

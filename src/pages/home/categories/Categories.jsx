@@ -7,11 +7,7 @@ export default function Categories() {
     return <CategorySlide slide={slide} />;
   }
 
-  const initialSlides = [
-    <CategorySlide slide={0} />,
-    <CategorySlide slide={1} />,
-    '',
-  ];
+  const initialSlides = [true, true, false];
 
   return (
     <section className="flex flex-col px-sides py-96">
@@ -20,6 +16,7 @@ export default function Categories() {
       </Typography>
       <ButtonSlider
         initialSlides={initialSlides}
+        RenderFn={CategorySlide}
         fetchSlide={fetchSlide}
         buttonsClasses="gap-16 mt-64 justify-center"
       />

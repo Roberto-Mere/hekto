@@ -13,10 +13,10 @@ export async function fetchBlogs() {
   return blogs;
 }
 
-export async function fetchProductSlide(page) {
+export async function fetchProductSlice(page, items) {
   const totalProducts = 10;
-  const start = (page * 4) % totalProducts;
-  const end = start + 4;
+  const start = (page * items) % totalProducts;
+  const end = start + items;
 
   if (end > totalProducts) {
     const res = await Promise.all([
@@ -56,10 +56,10 @@ export async function fetchProductSlide(page) {
   }
 }
 
-export async function fetchCategoriesSlide(page) {
+export async function fetchCategoriesSlice(page, items) {
   const totalCategories = 7;
-  const start = (page * 4) % totalCategories;
-  const end = start + 4;
+  const start = (page * items) % totalCategories;
+  const end = start + items;
 
   if (end > totalCategories) {
     const res = await Promise.all([

@@ -8,7 +8,7 @@ export default function CategoryCard({ id, name, image }) {
     <article>
       <div className="group grid">
         <Ellipse className="grid-overlap h-full w-full text-gray-3" />
-        <div className="grid-overlap h-full w-full rounded-full transition-all duration-500 ease-out group-hover:-translate-y-8 group-hover:translate-x-8">
+        <div className="grid-overlap h-full w-full rounded-full transition-all duration-500 ease-out group-focus-within:-translate-y-8 group-focus-within:translate-x-8 group-hover:-translate-y-8 group-hover:translate-x-8">
           <img
             src={image}
             alt={name}
@@ -17,7 +17,7 @@ export default function CategoryCard({ id, name, image }) {
         </div>
         <Link
           to={`/products?category=${id}`}
-          className="grid-overlap invisible z-10 mb-24 self-end justify-self-center rounded-xl opacity-0 transition-all duration-100 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100"
+          className="grid-overlap z-10 mb-24 self-end justify-self-center rounded-xl opacity-0 transition-all duration-100 group-odd/hidden:invisible group-focus-within:opacity-100 group-hover:opacity-100"
         >
           <Button size="small" backgroundColor="bg-success" tabIndex={-1}>
             <Typography type="label-small">View Details</Typography>

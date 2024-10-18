@@ -6,34 +6,30 @@ import Dot from '../Dot';
 
 export default function ButtonSlider({
   initialSlides,
-  fetchSlide,
+  RenderFn,
   buttonType,
   classes = '',
   buttonsClasses = '',
 }) {
-  const [currSlide, setCurrSlide] = useState(0);
-  const [currSlides, setCurrSlides] = useState(initialSlides);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [fetchedSlides, setFetchedSlides] = useState(initialSlides);
 
-  async function goToSlide(slide) {
-    setCurrSlide(slide);
+  function goToSlide(slide) {
+    setActiveSlide(slide);
 
-    if (slide + 1 !== currSlides.length && !currSlides[slide + 1]) {
-      const nextSlide = await fetchSlide(slide + 1);
-
-      setCurrSlides((prevSlides) => {
+    if (slide + 1 !== fetchedSlides.length && !fetchedSlides[slide + 1]) {
+      setFetchedSlides((prevSlides) => {
         const newSlides = [...prevSlides];
-        newSlides[slide + 1] = nextSlide;
+        newSlides[slide + 1] = true;
 
         return newSlides;
       });
     }
 
-    if (!currSlides[slide]) {
-      const nextSlide = await fetchSlide(slide);
-
-      setCurrSlides((prevSlides) => {
+    if (!fetchedSlides[slide]) {
+      setFetchedSlides((prevSlides) => {
         const newSlides = [...prevSlides];
-        newSlides[slide] = nextSlide;
+        newSlides[slide] = true;
 
         return newSlides;
       });
@@ -41,7 +37,7 @@ export default function ButtonSlider({
   }
 
   const buttons = initialSlides.map((_, index) => {
-    const isActive = currSlide === index;
+    const isActive = activeSlide === index;
 
     return (
       <button onClick={() => goToSlide(index)}>
@@ -61,18 +57,18 @@ export default function ButtonSlider({
   return (
     <div className={classes ? classes : null} data-testid="slider">
       <List
-        list={currSlides}
+        list={fetchedSlides}
         keyFn={(_, index) => index}
         classes="overflow-x-clip"
         itemClasses="shrink-0 basis-full"
       >
         {(slide, index) => (
           <div
-            style={{ transform: `translateX(${-currSlide * 100}%)` }}
-            className={`h-full transition-all duration-700 ease-in-out ${currSlide !== index ? 'invisible' : ''}`}
+            style={{ transform: `translateX(${-activeSlide * 100}%)` }}
+            className={`h-full transition-all duration-700 ease-in-out ${activeSlide !== index ? 'group/hidden' : ''}`}
             data-testid="slide"
           >
-            {slide}
+            {slide ? <RenderFn slide={index} /> : null}
           </div>
         )}
       </List>
