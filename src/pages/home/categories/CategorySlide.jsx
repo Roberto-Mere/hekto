@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchCategoriesSlide } from '../../../http';
+import { fetchCategoriesSlice } from '../../../http';
 import List from '../../../components/list/List';
 import Preloader from '../../../components/Preloader';
 import CategoryCard from '../../../components/CategoryCard';
@@ -7,7 +7,7 @@ import CategoryCard from '../../../components/CategoryCard';
 export default function CategorySlide({ slide }) {
   const { data, status } = useQuery({
     queryKey: ['category', `${slide}`],
-    queryFn: () => fetchCategoriesSlide(slide),
+    queryFn: () => fetchCategoriesSlice(slide, 4),
   });
 
   return (
