@@ -20,6 +20,17 @@ describe('Button slider component', () => {
     expect(lists[1]).toContainElement(...screen.getAllByRole('button'));
   });
 
+  it('should use slide component function passed to render slides', () => {
+    const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
+
+    const RenderFn = vi.fn(({ slide }) => <h1>{slide}</h1>);
+
+    render(<ButtonSlider initialSlides={initialSlides} RenderFn={RenderFn} />);
+
+    expect(RenderFn).toHaveBeenCalledTimes(3);
+    expect(screen.getAllByRole('heading')).toHaveLength(3);
+  });
+
   it('should add additional classes to slider when passed', () => {
     const initialSlides = ['Slide 1', 'Slide 2', 'Slide 3'];
 
@@ -73,7 +84,7 @@ describe('Button slider component', () => {
     expect(slides[2]).toHaveStyle('transform: translateX(-100%)');
   });
 
-  it('should fetch next slide when clicking on slide button', async () => {
+  it('should fetch next slide data when clicking on slide', async () => {
     const initialSlides = ['Slide 1', 'Slide 2', ''];
     const fetchSlide = vi.fn(() => new Promise((resolve) => resolve('Slide')));
 
