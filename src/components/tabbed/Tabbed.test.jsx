@@ -42,6 +42,24 @@ describe('Tabbed component', () => {
     expect(screen.getByRole('article').textContent).toEqual('Tab 2');
   });
 
+  it('should add classes when passed', () => {
+    const tabs = ['1', '2', '3'];
+    const RenderFn = vi.fn();
+
+    render(<Tabbed tabs={tabs} classes="test" RenderFn={RenderFn} />);
+
+    expect(screen.getByTestId('tabbed')).toHaveClass('test');
+  });
+
+  it('should not add classes when not passed', () => {
+    const tabs = ['1', '2', '3'];
+    const RenderFn = vi.fn();
+
+    render(<Tabbed tabs={tabs} RenderFn={RenderFn} />);
+
+    expect(screen.getByTestId('tabbed')).not.toHaveAttribute('class');
+  });
+
   it('should add tab button container classes when passed', () => {
     const tabs = ['1', '2', '3'];
     const RenderFn = vi.fn();

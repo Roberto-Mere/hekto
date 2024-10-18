@@ -2,7 +2,12 @@ import { useState } from 'react';
 import List from '../list/List';
 import Typography from '../typography/Typography';
 
-export default function Tabbed({ tabs, RenderFn, buttonsClasses = '' }) {
+export default function Tabbed({
+  tabs,
+  RenderFn,
+  classes = '',
+  buttonsClasses = '',
+}) {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   function changeTab(tab) {
@@ -10,7 +15,7 @@ export default function Tabbed({ tabs, RenderFn, buttonsClasses = '' }) {
   }
 
   return (
-    <div>
+    <div className={classes ? classes : null} data-testid="tabbed">
       <List list={tabs} keyFn={(tab) => tab} classes={`${buttonsClasses}`}>
         {(tab) => (
           <button
