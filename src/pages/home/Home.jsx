@@ -3,6 +3,7 @@ import Categories from './categories/Categories';
 import Discount from './discount/Discount';
 import Featured from './featured/Featured';
 import Hero from './hero/Hero';
+import Latest from './latest/Latest';
 import Newsletter from './newsletter/Newsletter';
 import Trending from './trending/Trending';
 import Unique from './unique/Unique';
@@ -12,9 +13,10 @@ export default function Home() {
     <main>
       <Hero />
       <Featured />
-      <Discount />
+      <Latest />
       <Unique />
       <Trending />
+      <Discount />
       <Categories />
       <Newsletter />
       <Blogs />
