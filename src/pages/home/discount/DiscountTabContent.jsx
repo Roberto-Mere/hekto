@@ -33,7 +33,9 @@ export default function DiscountTabContent({ tab }) {
   return (
     <>
       {status === 'pending' ? (
-        <Loader />
+        <div className="h-[43.7rem]">
+          <Loader />
+        </div>
       ) : (
         <article className="flex items-center justify-between">
           <div className="flex max-w-[64rem] flex-col items-start gap-24">
