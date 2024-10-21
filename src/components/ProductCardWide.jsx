@@ -8,7 +8,7 @@ export default function ProductCardWide({ id, image, name, price }) {
         <img
           src={image}
           alt={name}
-          className="grid-overlap mb-12 h-[27rem] w-full object-cover"
+          className="grid-overlap mb-12 h-[25vh] w-full object-cover"
         />
         <div className="flex justify-between">
           <Typography type="label" classes="text-primary mb-8 w-max">

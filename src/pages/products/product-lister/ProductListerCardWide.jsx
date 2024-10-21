@@ -15,12 +15,8 @@ export default function ProductListerCardWide({
 }) {
   return (
     <article className="flex gap-32 rounded-lg p-16 shadow-normal">
-      <Link to={`/products/${id}`} className="w-1/4 grow">
-        <img
-          src={image}
-          alt={name}
-          className="h-full max-h-[20rem] w-full object-cover"
-        />
+      <Link to={`/products/${id}`} className="w-2/5">
+        <img src={image} alt={name} className="h-[18vh] w-full object-cover" />
       </Link>
       <div className="flex flex-col justify-between">
         <div className="mt-24 flex flex-col gap-8">

@@ -26,7 +26,7 @@ export default function DiscountTabContent({ tab }) {
           itemClasses=""
           classes="gap-32 grid grid-cols-3"
         >
-          {(_) => <Preloader height="h-[30.4rem]" />}
+          {(_) => <Preloader height="h-[28vh]" />}
         </List>
       ) : (
         <List

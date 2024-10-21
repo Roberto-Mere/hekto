@@ -9,7 +9,7 @@ export default function DecorImage({ src, alt, id }) {
       <img
         src={src}
         alt={alt}
-        className="grid-overlap h-full max-h-[43.7rem] w-full translate-x-48 self-center object-contain"
+        className="grid-overlap h-full max-h-[40vh] w-full translate-x-48 self-center object-contain"
       />
     </Link>
   );

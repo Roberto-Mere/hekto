@@ -16,7 +16,7 @@ export default function ProductCard({
       <img
         src={image}
         alt={name}
-        className="grid-overlap h-full max-h-[23rem] w-full object-cover"
+        className="grid-overlap h-full max-h-[22vh] w-full object-cover"
       />
       <Link
         to={`/products/${id}`}

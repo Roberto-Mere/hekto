@@ -15,11 +15,11 @@ export default function ProductListerCard({
 }) {
   return (
     <article className="flex h-full flex-col rounded-lg p-8 shadow-normal">
-      <Link to={`/products/${id}`} className="h-[20rem]">
+      <Link to={`/products/${id}`} className="h-[18vh]">
         <img
           src={image}
           alt={name}
-          className="h-full max-h-[20rem] w-full object-cover"
+          className="h-full max-h-[18vh] w-full object-cover"
         />
       </Link>
       <div className="flex grow flex-col justify-between p-8">

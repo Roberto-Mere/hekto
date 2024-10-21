@@ -33,12 +33,12 @@ export default function DiscountTabContent({ tab }) {
   return (
     <>
       {status === 'pending' ? (
-        <div className="h-[43.7rem]">
+        <div className="h-[40vh]">
           <Loader />
         </div>
       ) : (
         <article className="flex items-center justify-between">
-          <div className="flex max-w-[64rem] flex-col items-start gap-24">
+          <div className="flex max-w-[33vw] flex-col items-start gap-24">
             <Typography type="h3">20% Discount Of All Products</Typography>
             <Typography type="sub2">{data.name}</Typography>
             <Typography type="body-large" classes="text-gray-3">

@@ -6,7 +6,7 @@ export default function ComplexInput({
   buttonContent = '',
 }) {
   return (
-    <form className="flex min-w-[32.8rem] rounded-xl border border-gray-2 p-4 focus-within:border-tertiary">
+    <form className="flex min-w-[17vw] rounded-xl border border-gray-2 p-4 focus-within:border-tertiary">
       <input
         type={type}
         placeholder={placeholder}
