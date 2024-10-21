@@ -10,7 +10,10 @@ export default function Links() {
       classes={'ml-[8rem] mr-auto gap-32 items-center'}
     >
       {(item) => (
-        <NavLink>
+        <NavLink
+          to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+          className={({ isActive }) => (isActive ? 'text-primary' : '')}
+        >
           <Typography type="label">{item}</Typography>
         </NavLink>
       )}
