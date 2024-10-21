@@ -63,7 +63,11 @@ export default function DiscountTabContent({ tab }) {
               <Typography type="sub4">Shop Now</Typography>
             </Button>
           </div>
-          <DecorImage src={tabContents[tab].image} alt={data.name} />
+          <DecorImage
+            src={tabContents[tab].image}
+            alt={data.name}
+            id={tabContents[tab].id}
+          />
         </article>
       )}
     </>
