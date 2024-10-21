@@ -14,7 +14,7 @@ export default function ProductListerCardWide({
   description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, nam soluta! Dolores aspernatur omnis vero animi modi ut beatae.',
 }) {
   return (
-    <article className="flex gap-32 p-16 shadow-normal">
+    <article className="flex gap-32 rounded-lg p-16 shadow-normal">
       <Link to={`/products/${id}`} className="w-1/4 grow">
         <img
           src={image}
