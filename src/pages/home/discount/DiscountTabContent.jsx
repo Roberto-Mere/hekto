@@ -6,14 +6,16 @@ import Button from '../../../components/button/Button';
 import List from '../../../components/list/List';
 import IconItem from '../../../components/IconItem';
 import Checkmark from '../../../assets/svg/checkmark.svg';
-import headphones from '../../../assets/image/headphones.png';
 import DecorImage from '../../../components/DecorImage';
+import headphones from '../../../assets/image/headphones.png';
+import laptop from '../../../assets/image/laptop.png';
+import gameConsole from '../../../assets/image/game-console.png';
 
 export default function DiscountTabContent({ tab }) {
   const tabContents = {
     Headphones: { id: 2, image: headphones },
-    Laptop: { id: 3, image: headphones },
-    'Game Console': { id: 5, image: headphones },
+    Laptop: { id: 3, image: laptop },
+    'Game Console': { id: 5, image: gameConsole },
   };
 
   const { data, status } = useQuery({
