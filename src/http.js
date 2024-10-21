@@ -13,6 +13,21 @@ export async function fetchBlogs() {
   return blogs;
 }
 
+export async function fetchProducts() {
+  const res = await fetch(`http://localhost:5000/products`);
+
+  if (!res.ok) {
+    const error = new Error('An error occurred fetching products');
+    error.status = res.status;
+
+    throw error;
+  }
+
+  const products = await res.json();
+
+  return products;
+}
+
 export async function fetchProduct(id) {
   const res = await fetch(`http://localhost:5000/products?id=${id}`);
 
