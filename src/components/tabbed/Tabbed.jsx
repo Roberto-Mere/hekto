@@ -26,9 +26,7 @@ export default function Tabbed({
           </button>
         )}
       </List>
-      <article>
-        <RenderFn tab={activeTab} />
-      </article>
+      <RenderFn tab={activeTab} />
     </div>
   );
 }

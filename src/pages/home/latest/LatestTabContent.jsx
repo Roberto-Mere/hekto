@@ -18,7 +18,7 @@ export default function DiscountTabContent({ tab }) {
   });
 
   return (
-    <>
+    <article>
       {status === 'pending' ? (
         <List
           list={Array(6).fill(null)}
@@ -37,6 +37,6 @@ export default function DiscountTabContent({ tab }) {
           {(product) => <ProductCardWide {...product} />}
         </List>
       )}
-    </>
+    </article>
   );
 }
