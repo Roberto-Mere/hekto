@@ -1,3 +1,3 @@
 export default function IconButton({ children, classes }) {
-  return <button className={`rounded-full p-8 ${classes}`}>{children}</button>;
+  return <button className={classes ? classes : null}>{children}</button>;
 }
