@@ -5,7 +5,10 @@ import Filter from './Filter';
 export default function FilterBlock({ title, filters, filterColor }) {
   return (
     <div>
-      <Typography type="sub3" classes="border-b-[1px] border-black mb-24">
+      <Typography
+        type="sub3"
+        classes="border-b-[1px] border-black mb-24 pb-8 w-max"
+      >
         {title}
       </Typography>
       <List
