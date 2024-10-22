@@ -13,8 +13,8 @@ export async function fetchBlogs() {
   return blogs;
 }
 
-export async function fetchProducts() {
-  const res = await fetch(`http://localhost:5000/products`);
+export async function fetchProducts(query) {
+  const res = await fetch(`http://localhost:5000/products?${query}`);
 
   if (!res.ok) {
     const error = new Error('An error occurred fetching products');
