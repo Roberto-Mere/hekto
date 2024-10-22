@@ -3,6 +3,7 @@ import Star from '../../../../assets/svg/star.svg';
 import List from '../../../../components/list/List';
 import ProductCardButtons from '../../../../components/ProductCardButtons';
 import { Link } from 'react-router-dom';
+import Stars from '../../../../components/Stars';
 
 export default function ProductListCard({
   id,
@@ -27,15 +28,7 @@ export default function ProductListCard({
           <Link to={`/products/${id}`}>
             <Typography type="sub3">{name}</Typography>
           </Link>
-          <List
-            list={Array(5).fill(true).fill(false, rating)}
-            keyFn={(_, index) => index}
-            classes="gap-8"
-          >
-            {(item) => (
-              <Star className={item ? 'text-secondary' : 'text-gray-2'} />
-            )}
-          </List>
+          <Stars stars={rating} />
           <div className="flex items-center gap-16">
             <Typography type="label">
               $
