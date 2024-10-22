@@ -29,10 +29,7 @@ export default function Filters() {
     {
       title: 'Rating',
       filters: [
-        {
-          label: <Stars stars={1} />,
-          id: 'stars1',
-        },
+        { label: <Stars stars={1} />, id: 'stars1' },
         { label: <Stars stars={2} />, id: 'stars2' },
         { label: <Stars stars={3} />, id: 'stars3' },
         { label: <Stars stars={4} />, id: 'stars4' },
@@ -44,7 +41,7 @@ export default function Filters() {
       title: 'Categories',
       filters: [
         { label: 'Watches', id: 'watches' },
-        { label: 'Headphones', id: 'Headphones' },
+        { label: 'Headphones', id: 'headphones' },
         { label: 'Laptops', id: 'laptops' },
         { label: 'Game Consoles', id: 'consoles' },
         { label: 'Clothes', id: 'clothes' },
@@ -62,7 +59,7 @@ export default function Filters() {
         { label: '$50 - $100', id: 'expensive' },
         { label: '$100+', id: 'expensivest' },
       ],
-      filterColor: 'info',
+      filterColor: 'primary',
     },
   ];
 
