@@ -1,32 +1,41 @@
 import List from '../../../../components/list/List';
 import Preloader from '../../../../components/Preloader';
-import ProductListrCardWide from './ProductListCardWide';
+import ProductListCardWide from './ProductListCardWide';
 import ProductListCard from './ProductListCard';
+import { useSelector } from 'react-redux';
 
 export default function ProductList({ fetchingStatus, products }) {
+  const sortView = useSelector((state) => state.products.view);
+
   return (
     <main>
       {fetchingStatus == 'pending' ? (
         <List
           list={Array(5).fill(null)}
           keyFn={(_, index) => index}
-          itemClasses=""
-          //   classes="flex-col gap-32"
-          classes="grid grid-cols-3 gap-32"
+          classes={
+            sortView === 'list' ? 'flex-col gap-32' : 'grid grid-cols-3 gap-32'
+          }
         >
-          {/* {(_) => <Preloader height="h-[22vh]" />} */}
-          {(_) => <Preloader height="h-[44vh]" />}
+          {(_) => (
+            <Preloader height={sortView === 'list' ? 'h-[22vh]' : 'h-[44vh]'} />
+          )}
         </List>
       ) : (
         <List
           list={products}
           keyFn={(product) => product.id}
-          itemClasses=""
-          //   classes="flex-col gap-32"
-          classes="grid grid-cols-3 gap-32"
+          classes={
+            sortView === 'list' ? 'flex-col gap-32' : 'grid grid-cols-3 gap-32'
+          }
         >
-          {/* {(product) => <ProductListCardWide {...product} />} */}
-          {(product) => <ProductListCard {...product} />}
+          {(product) =>
+            sortView === 'list' ? (
+              <ProductListCardWide {...product} />
+            ) : (
+              <ProductListCard {...product} />
+            )
+          }
         </List>
       )}
     </main>
