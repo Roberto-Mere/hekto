@@ -1,7 +1,18 @@
 import Typography from '../../../../components/typography/Typography';
 import CheckmarkSmall from '../../../../assets/svg/checkmark-small.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { productsActions } from '../../../../store';
 
-export default function Filter({ label, id, filterColor }) {
+export default function Filter({ label, type, id, filterColor }) {
+  const checked = useSelector((state) =>
+    state.products.filters[type].includes(id),
+  );
+  const dispatch = useDispatch();
+
+  function handleToggleFilter() {
+    dispatch(productsActions.toggleFilter({ type, id }));
+  }
+
   const bgColor =
     filterColor === 'info'
       ? 'bg-info-light'
@@ -17,7 +28,13 @@ export default function Filter({ label, id, filterColor }) {
 
   return (
     <label className="flex items-center gap-8">
-      <input type="checkbox" id={id} className="peer hidden bg-white" />
+      <input
+        checked={checked}
+        onChange={handleToggleFilter}
+        type="checkbox"
+        id={id}
+        className="peer hidden bg-white"
+      />
       <span
         className={`h-16 w-16 rounded-md peer-checked:hidden ${bgColor}`}
       ></span>

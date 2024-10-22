@@ -2,7 +2,7 @@ import List from '../../../../components/list/List';
 import Typography from '../../../../components/typography/Typography';
 import Filter from './Filter';
 
-export default function FilterBlock({ title, filters, filterColor }) {
+export default function FilterBlock({ title, type, filters, filterColor }) {
   return (
     <div>
       <Typography
@@ -16,7 +16,9 @@ export default function FilterBlock({ title, filters, filterColor }) {
         keyFn={(_, index) => index}
         classes="flex-col gap-16"
       >
-        {(filter) => <Filter {...filter} filterColor={filterColor} />}
+        {(filter) => (
+          <Filter {...filter} filterColor={filterColor} type={type} />
+        )}
       </List>
     </div>
   );

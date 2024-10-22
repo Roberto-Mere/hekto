@@ -1,5 +1,7 @@
+import Button from '../../../../components/button/Button';
 import List from '../../../../components/list/List';
 import Stars from '../../../../components/Stars';
+import Typography from '../../../../components/typography/Typography';
 import FilterBlock from './FilterBlock';
 
 export default function Filters() {
@@ -14,27 +16,30 @@ export default function Filters() {
         { label: 'Vke', id: 'vke' },
         { label: 'Glossiness', id: 'glossiness' },
       ],
+      type: 'brand',
       filterColor: 'info',
     },
     {
       title: 'Discount Offer',
       filters: [
-        { label: '5% Off', id: 'discount5' },
-        { label: '20% Off', id: 'discount20' },
-        { label: '50% Off', id: 'discount50' },
+        { label: '5% Off', id: '5' },
+        { label: '20% Off', id: '20' },
+        { label: '50% Off', id: '50' },
       ],
+      type: 'discount',
       filterColor: 'info',
     },
 
     {
       title: 'Rating',
       filters: [
-        { label: <Stars stars={1} />, id: 'stars1' },
-        { label: <Stars stars={2} />, id: 'stars2' },
-        { label: <Stars stars={3} />, id: 'stars3' },
-        { label: <Stars stars={4} />, id: 'stars4' },
-        { label: <Stars stars={5} />, id: 'stars5' },
+        { label: <Stars stars={1} />, id: '1' },
+        { label: <Stars stars={2} />, id: '2' },
+        { label: <Stars stars={3} />, id: '3' },
+        { label: <Stars stars={4} />, id: '4' },
+        { label: <Stars stars={5} />, id: '5' },
       ],
+      type: 'rating',
       filterColor: 'secondary',
     },
     {
@@ -48,6 +53,7 @@ export default function Filters() {
         { label: 'Perfumes', id: 'perfumes' },
         { label: 'Jewellery', id: 'jewellery' },
       ],
+      type: 'category',
       filterColor: 'primary',
     },
     {
@@ -59,6 +65,7 @@ export default function Filters() {
         { label: '$50 - $100', id: 'expensive' },
         { label: '$100+', id: 'expensivest' },
       ],
+      type: 'price',
       filterColor: 'primary',
     },
   ];
@@ -68,7 +75,7 @@ export default function Filters() {
       <List
         list={filterBlocks}
         keyFn={(block) => block.title}
-        classes="flex-col gap-48"
+        classes="flex-col gap-48 mb-48"
       >
         {(block) => <FilterBlock {...block} />}
       </List>
