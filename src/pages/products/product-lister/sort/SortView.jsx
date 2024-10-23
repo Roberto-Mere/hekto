@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productsActions } from '../../../../store';
 
 export default function SortView() {
-  const sortView = useSelector((state) => state.products.view);
+  const sortView = useSelector((state) => state.products.sort.view);
   const dispatch = useDispatch();
 
   function handleViewChange(view) {

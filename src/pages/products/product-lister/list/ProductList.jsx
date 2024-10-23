@@ -5,7 +5,7 @@ import ProductListCard from './ProductListCard';
 import { useSelector } from 'react-redux';
 
 export default function ProductList({ fetchingStatus, products }) {
-  const sortView = useSelector((state) => state.products.view);
+  const sortView = useSelector((state) => state.products.sort.view);
 
   return (
     <main>

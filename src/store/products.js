@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  view: 'list',
+  sort: {
+    perPage: '10',
+    sortBy: 'desc',
+    view: 'list',
+  },
   filters: {
     brand: [],
     discount: [],
@@ -16,7 +20,7 @@ export const productsSlice = createSlice({
   initialState,
   reducers: {
     changeView(state, action) {
-      state.view = action.payload;
+      state.sort.view = action.payload;
     },
     toggleFilter(state, action) {
       const type = action.payload.type;
