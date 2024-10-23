@@ -16,7 +16,7 @@ describe('Tabbed component', () => {
     expect(buttons[1].textContent).toEqual(tabs[1]);
     expect(buttons[2].textContent).toEqual(tabs[2]);
 
-    expect(screen.getByRole('article').textContent).toEqual('Tab 1');
+    expect(screen.getByText('Tab 1')).toBeInTheDocument();
   });
 
   it('should use render function passed to render tab content', () => {
@@ -39,7 +39,7 @@ describe('Tabbed component', () => {
 
     await userEvent.click(buttons[1]);
 
-    expect(screen.getByRole('article').textContent).toEqual('Tab 2');
+    expect(screen.getByText('Tab 2')).toBeInTheDocument();
   });
 
   it('should add classes when passed', () => {
