@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Watches",
-      "price": 62,
+      "price": 42,
       "offer": 0,
       "rating": 4,
       "category": "watches",
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "name": "Laptop",
-      "price": 99,
+      "price": 199,
       "offer": 0,
       "rating": 2,
       "category": "laptops",
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "name": "Black Watches",
-      "price": 55,
+      "price": 45,
       "offer": 0,
       "rating": 4,
       "category": "watches",
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "name": "Game Console",
-      "price": 89,
+      "price": 289,
       "offer": 0,
       "rating": 4,
       "category": "consoles",
@@ -63,7 +63,7 @@
     {
       "id": 7,
       "name": "Perfume",
-      "price": 29,
+      "price": 24,
       "offer": 0,
       "rating": 4,
       "category": "perfumes",
@@ -73,7 +73,7 @@
     {
       "id": 8,
       "name": "Present Box",
-      "price": 29,
+      "price": 5,
       "offer": 0,
       "rating": 4,
       "category": "perfumes",
@@ -83,7 +83,7 @@
     {
       "id": 9,
       "name": "Bracelet",
-      "price": 76,
+      "price": 9,
       "offer": 0,
       "rating": 1,
       "category": "jewellery",
