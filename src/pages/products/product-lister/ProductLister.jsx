@@ -14,11 +14,23 @@ export default function ProductLister() {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
 
+  const priceRanges = {
+    cheapest: '^[0-9]$',
+    cheap: '^1[0-9]$|^2[0-4]$',
+    regular: '^2[5-9]$|^[34][0-9]$',
+    expensive: '^[56789][0-9]$',
+    expensivest: '^[1-9]\\d{2,}$',
+  };
+
   const queryParams = [
     { name: 'brand', options: filters.brand },
     { name: 'discount', options: filters.discount },
     { name: 'rating', options: filters.rating },
     { name: 'category', options: filters.category },
+    {
+      name: 'price',
+      options: filters.price.map((range) => priceRanges[range]),
+    },
   ];
 
   const query = constructFetchQuery(queryParams);
@@ -33,7 +45,7 @@ export default function ProductLister() {
     const discountParam = searchParams.get('discount');
     const ratingParam = searchParams.get('rating');
     const categoryParam = searchParams.get('category');
-    const priceParam = searchParams.get('category');
+    const priceParam = searchParams.get('price');
 
     dispatch(
       productsActions.setFilters({
