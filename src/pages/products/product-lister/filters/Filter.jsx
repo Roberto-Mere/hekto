@@ -2,15 +2,35 @@ import Typography from '../../../../components/typography/Typography';
 import CheckmarkSmall from '../../../../assets/svg/checkmark-small.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { productsActions } from '../../../../store';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Filter({ label, type, id, filterColor }) {
   const checked = useSelector((state) =>
     state.products.filters[type].includes(id),
   );
   const dispatch = useDispatch();
+  const [_, setSearchParams] = useSearchParams();
 
   function handleToggleFilter() {
     dispatch(productsActions.toggleFilter({ type, id }));
+
+    setSearchParams((prevSearchParams) => {
+      const prevFilterParam = prevSearchParams.get(type);
+      const newFilterParam = prevFilterParam ? prevFilterParam.split('|') : [];
+      const filterIndex = newFilterParam.indexOf(id);
+
+      if (filterIndex > -1) {
+        newFilterParam.splice(filterIndex, 1);
+      } else {
+        newFilterParam.push(id);
+      }
+
+      if (newFilterParam.length > 0)
+        prevSearchParams.set(type, newFilterParam.join('|'));
+      else prevSearchParams.delete(type);
+
+      return prevSearchParams;
+    });
   }
 
   const bgColor =
