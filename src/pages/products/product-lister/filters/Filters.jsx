@@ -33,11 +33,11 @@ export default function Filters({ onApplyFilters }) {
     {
       title: 'Rating',
       filters: [
-        { label: <Stars stars={1} />, id: '1' },
-        { label: <Stars stars={2} />, id: '2' },
-        { label: <Stars stars={3} />, id: '3' },
-        { label: <Stars stars={4} />, id: '4' },
         { label: <Stars stars={5} />, id: '5' },
+        { label: <Stars stars={4} />, id: '4' },
+        { label: <Stars stars={3} />, id: '3' },
+        { label: <Stars stars={2} />, id: '2' },
+        { label: <Stars stars={1} />, id: '1' },
       ],
       type: 'rating',
       filterColor: 'secondary',
