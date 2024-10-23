@@ -3,12 +3,11 @@ import List from '../list/List';
 import ArrowDown from '../../assets/svg/arrow-down.svg';
 import Typography from '../typography/Typography';
 
-export default function Select({ options, size }) {
-  const [selectedOption, setSelectedOption] = useState(options[0].value);
+export default function Select({ options, size, selectedOption, onSelect }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSelect = (value) => {
-    setSelectedOption(value);
+  const handleSelect = (option) => {
+    onSelect(option);
     setIsOpen(false);
   };
 
