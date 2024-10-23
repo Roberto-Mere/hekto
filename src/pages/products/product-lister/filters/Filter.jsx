@@ -32,6 +32,7 @@ export default function Filter({ label, type, id, filterColor }) {
         checked={checked}
         onChange={handleToggleFilter}
         type="checkbox"
+        id={`${type}-${id}`}
         className="peer hidden bg-white"
       />
       <span
