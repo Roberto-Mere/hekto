@@ -1,10 +1,8 @@
-import Button from '../../../../components/button/Button';
 import List from '../../../../components/list/List';
 import Stars from '../../../../components/Stars';
-import Typography from '../../../../components/typography/Typography';
 import FilterBlock from './FilterBlock';
 
-export default function Filters({ onApplyFilters }) {
+export default function Filters() {
   const filterBlocks = [
     {
       title: 'Product Brand',
@@ -71,14 +69,11 @@ export default function Filters({ onApplyFilters }) {
   ];
 
   return (
-    <aside className="mb-48">
-      <Button onClick={onApplyFilters}>
-        <Typography type="sub4">Apply Filters</Typography>
-      </Button>
+    <aside>
       <List
         list={filterBlocks}
         keyFn={(block) => block.title}
-        classes="flex-col gap-48 mt-48"
+        classes="flex-col gap-48"
       >
         {(block) => <FilterBlock {...block} />}
       </List>

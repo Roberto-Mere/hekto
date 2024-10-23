@@ -11,7 +11,7 @@ export default function ProductLister() {
   });
 
   return (
-    <div className="grid-lister grid gap-x-[17.2rem] gap-y-32 px-sides">
+    <div className="grid-lister mb-64 grid gap-x-[17.2rem] gap-y-32 px-sides">
       <Sort />
       <Filters />
       <ProductList fetchingStatus={status} products={data} />
