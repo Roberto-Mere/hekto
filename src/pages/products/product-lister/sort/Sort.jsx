@@ -1,40 +1,20 @@
-import IconButton from '../../../../components/IconButton';
-import ListView from '../../../../assets/svg/list-view.svg';
-import GridView from '../../../../assets/svg/grid-view.svg';
 import List from '../../../../components/list/List';
 import SortOption from './SortOption';
-import { useDispatch, useSelector } from 'react-redux';
-import { productsActions } from '../../../../store';
+import SortView from './SortView';
 
-export default function Sort({ view }) {
-  const dispatch = useDispatch();
-  const sortView = useSelector((state) => state.products.view);
-
-  function handleViewChange(view) {
-    dispatch(productsActions.changeView(view));
-  }
-
+export default function Sort() {
   const sortOptions = [
     {
+      name: 'Per Page',
+      input: '',
+    },
+    {
+      name: 'Sort By',
+      input: '',
+    },
+    {
       name: 'View',
-      input: (
-        <div className="flex gap-16">
-          <IconButton onClick={() => handleViewChange('list')}>
-            <ListView
-              className={
-                sortView === 'list' ? 'text-primary' : 'text-transparent'
-              }
-            />
-          </IconButton>
-          <IconButton onClick={() => handleViewChange('grid')}>
-            <GridView
-              className={
-                sortView === 'grid' ? 'text-primary' : 'text-transparent'
-              }
-            />
-          </IconButton>
-        </div>
-      ),
+      input: <SortView />,
     },
   ];
 
@@ -42,7 +22,7 @@ export default function Sort({ view }) {
     <List
       list={sortOptions}
       keyFn={(item) => item.name}
-      classes="col-span-2 justify-self-end"
+      classes="col-span-2 justify-self-end gap-64"
     >
       {(item) => <SortOption {...item} />}
     </List>
