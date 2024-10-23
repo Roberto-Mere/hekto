@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   sort: {
-    perPage: '10',
+    perPage: 6,
     sortBy: 'desc',
     view: 'list',
   },
@@ -19,6 +19,12 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
+    changePerPage(state, action) {
+      state.sort.perPage = action.payload;
+    },
+    changeSortBy(state, action) {
+      state.sort.sortBy = action.payload;
+    },
     changeView(state, action) {
       state.sort.view = action.payload;
     },
