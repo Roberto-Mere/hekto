@@ -11,6 +11,8 @@ import { productsActions } from '../../../store';
 
 export default function ProductLister() {
   const filters = useSelector((state) => state.products.filters);
+  const sortPerPage = useSelector((state) => state.products.sort.perPage);
+  const sortPage = useSelector((state) => state.products.sort.page);
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
 
@@ -33,10 +35,10 @@ export default function ProductLister() {
     },
   ];
 
-  const query = constructFetchQuery(queryParams);
+  const query = constructFetchQuery(queryParams, sortPerPage, sortPage);
 
   const { data, status } = useQuery({
-    queryKey: ['products', filters],
+    queryKey: ['products', { ...filters, sortPerPage, sortPage }],
     queryFn: () => fetchProducts(query),
   });
 
