@@ -41,7 +41,7 @@ export default function DescriptionTab({ tab }) {
         >
           {(item) => (
             <IconItem
-              icon={<Checkmark />}
+              icon={<Checkmark className="h-16 w-16" />}
               text={<Typography classes="text-gray-3">{item}</Typography>}
               classes="gap-8"
             />
