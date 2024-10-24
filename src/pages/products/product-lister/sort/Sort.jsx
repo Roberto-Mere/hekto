@@ -4,18 +4,30 @@ import Select from '../../../../components/select/Select';
 import { productsActions } from '../../../../store';
 import SortOption from './SortOption';
 import SortView from './SortView';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Sort() {
   const perPage = useSelector((state) => state.products.sort.perPage);
   const sortBy = useSelector((state) => state.products.sort.sortBy);
   const dispatch = useDispatch();
+  const [_, setSearchParams] = useSearchParams();
 
   function handleSelectSortBy(option) {
     dispatch(productsActions.changeSortBy(option));
+    setSearchParams((prevSearchParams) => {
+      prevSearchParams.set('sortBy', option);
+
+      return prevSearchParams;
+    });
   }
 
   function handleSelectPerPage(option) {
     dispatch(productsActions.changePerPage(option));
+    setSearchParams((prevSearchParams) => {
+      prevSearchParams.set('perPage', option);
+
+      return prevSearchParams;
+    });
   }
 
   const perPageOptions = [
@@ -28,7 +40,7 @@ export default function Sort() {
     { value: 'desc', label: 'Price: High -> Low' },
     { value: 'atoz', label: 'Alphabetical: A -> Z' },
     { value: 'ztoa', label: 'Alphabetical: Z -> A' },
-    { value: 'fav', label: 'Favorites' },
+    { value: 'rat', label: 'Rating' },
   ];
 
   const sortOptions = [
