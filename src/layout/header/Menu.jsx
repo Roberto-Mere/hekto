@@ -3,7 +3,7 @@ import Typography from '../../components/typography/Typography';
 
 import ArrowDownIcon from '../../assets/svg/arrow-down.svg';
 import UserIcon from '../../assets/svg/user.svg';
-import HeartIcon from '../../assets/svg/heart.svg';
+import HeartIcon from '../../assets/svg/heart-full.svg';
 import CartIcon from '../../assets/svg/cart.svg';
 import IconItem from '../../components/IconItem';
 import IconButton from '../../components/IconButton';
