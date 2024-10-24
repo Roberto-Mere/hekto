@@ -3,6 +3,7 @@ import Preloader from '../../../../components/Preloader';
 import ProductListCardWide from './ProductListCardWide';
 import ProductListCard from './ProductListCard';
 import { useSelector } from 'react-redux';
+import Typography from '../../../../components/typography/Typography';
 
 export default function ProductList({ fetchingStatus, products }) {
   const sortView = useSelector((state) => state.products.sort.view);
@@ -23,21 +24,31 @@ export default function ProductList({ fetchingStatus, products }) {
           )}
         </List>
       ) : (
-        <List
-          list={products}
-          keyFn={(product) => product.id}
-          classes={
-            sortView === 'list' ? 'flex-col gap-32' : 'grid grid-cols-3 gap-32'
-          }
-        >
-          {(product) =>
-            sortView === 'list' ? (
-              <ProductListCardWide {...product} />
-            ) : (
-              <ProductListCard {...product} />
-            )
-          }
-        </List>
+        <>
+          {products.length > 0 ? (
+            <List
+              list={products}
+              keyFn={(product) => product.id}
+              classes={
+                sortView === 'list'
+                  ? 'flex-col gap-32'
+                  : 'grid grid-cols-3 gap-32'
+              }
+            >
+              {(product) =>
+                sortView === 'list' ? (
+                  <ProductListCardWide {...product} />
+                ) : (
+                  <ProductListCard {...product} />
+                )
+              }
+            </List>
+          ) : (
+            <Typography type="sub1" classes="text-center mt-24">
+              No matches... Try again
+            </Typography>
+          )}
+        </>
       )}
     </main>
   );
