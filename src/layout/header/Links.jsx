@@ -7,10 +7,13 @@ export default function Links() {
     <List
       list={['Home', 'Products', 'Blog', 'Contact']}
       keyFn={(item) => item}
-      classes={'ml-[8rem] mr-auto gap-32 items-center'}
+      classes={'ml-96 mr-auto gap-32 items-center'}
     >
       {(item) => (
-        <NavLink>
+        <NavLink
+          to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+          className={({ isActive }) => (isActive ? 'text-primary' : '')}
+        >
           <Typography type="label">{item}</Typography>
         </NavLink>
       )}

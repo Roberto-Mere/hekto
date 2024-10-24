@@ -25,14 +25,14 @@ export default function Trending() {
           classes="gap-32 w-full"
           itemClasses="basis-full flex"
         >
-          {(_) => <Preloader height="h-[34.4rem]" />}
+          {(_) => <Preloader height="h-[32vh]" />}
         </List>
       ) : (
         <List
           list={data}
           keyFn={(product) => product.id}
           classes="gap-32"
-          itemClasses="flex-1 flex h-[34.4rem]"
+          itemClasses="flex-1 flex h-[32vh]"
         >
           {(product) => <ProductCardSmall {...product} />}
         </List>

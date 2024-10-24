@@ -8,7 +8,7 @@ export default function ProductCardSmall({ id, image, name, price }) {
         <img
           src={image}
           alt={name}
-          className="h-full max-h-[23rem] w-full object-cover p-16 pb-0"
+          className="h-full max-h-[22vh] w-full object-cover p-16 pb-0"
         />
         <div className="flex flex-col items-center p-24">
           <Typography type="label-bold" classes="text-primary mb-8 w-max">

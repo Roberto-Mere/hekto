@@ -1,6 +1,6 @@
-export default function IconButton({ children, color, backgroundColor }) {
+export default function IconButton({ children, classes, ...props }) {
   return (
-    <button className={`rounded-full p-8 ${color} ${backgroundColor}`}>
+    <button className={classes ? classes : null} {...props}>
       {children}
     </button>
   );

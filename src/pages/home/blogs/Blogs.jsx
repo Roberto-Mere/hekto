@@ -24,7 +24,7 @@ export default function Blogs() {
           classes="gap-32 w-full"
           itemClasses="basis-full flex"
         >
-          {(_) => <Preloader height="h-[51rem]" />}
+          {(_) => <Preloader height="h-[48vh]" />}
         </List>
       ) : (
         <List

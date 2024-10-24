@@ -6,7 +6,7 @@ export default function Featured() {
   const initialSlides = [true, true, false, false];
 
   return (
-    <section className="flex flex-col px-[24.2rem] py-96">
+    <section className="flex flex-col px-[23.6rem] py-96">
       <Typography type="h2" classes="mb-64 self-center">
         Featured Products
       </Typography>

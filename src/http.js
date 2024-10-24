@@ -13,6 +13,40 @@ export async function fetchBlogs() {
   return blogs;
 }
 
+export async function fetchProducts(query) {
+  const res = await fetch(`http://localhost:5000/products?${query}`);
+
+  if (!res.ok) {
+    const error = new Error('An error occurred fetching products');
+    error.status = res.status;
+
+    throw error;
+  }
+
+  const pageLinks = res.headers.get('Link').split(',');
+  const lastPageIndex = pageLinks[pageLinks.length - 1].indexOf('_page') + 6;
+  const lastPage = pageLinks[pageLinks.length - 1][lastPageIndex] ?? 1;
+
+  const products = await res.json();
+
+  return { products, lastPage };
+}
+
+export async function fetchProduct(id) {
+  const res = await fetch(`http://localhost:5000/products?id=${id}`);
+
+  if (!res.ok) {
+    const error = new Error('An error occurred fetching product');
+    error.status = res.status;
+
+    throw error;
+  }
+
+  const product = await res.json();
+
+  return product[0];
+}
+
 export async function fetchProductSlice(page, items) {
   const totalProducts = 10;
   const start = (page * items) % totalProducts;

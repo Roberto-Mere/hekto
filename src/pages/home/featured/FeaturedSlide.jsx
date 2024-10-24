@@ -17,16 +17,16 @@ export default function FeaturedSlide({ slide }) {
           list={Array(4).fill(null)}
           keyFn={(_, index) => index}
           itemClasses="basis-full"
-          classes="gap-32 px-[6rem]"
+          classes="gap-32 px-64"
         >
-          {(_) => <Preloader height="h-[36.8rem]" />}
+          {(_) => <Preloader height="h-[34vh]" />}
         </List>
       ) : (
         <List
           list={data}
           keyFn={(item) => item.id}
-          itemClasses="basis-full flex h-[36.8rem]"
-          classes="gap-32 px-[6rem]"
+          itemClasses="basis-full flex h-[34vh]"
+          classes="gap-32 px-64"
         >
           {(item) => <ProductCard {...item} />}
         </List>

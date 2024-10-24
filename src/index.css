@@ -24,6 +24,10 @@
   .grid-product {
     grid-template-rows: 1fr max-content;
   }
+
+  .grid-lister {
+    grid-template-columns: max-content 1fr;
+  }
 }
 
 @layer components {

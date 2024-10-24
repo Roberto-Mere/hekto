@@ -19,13 +19,13 @@ export default function CategorySlide({ slide }) {
           itemClasses="basis-full"
           classes="gap-64"
         >
-          {(_) => <Preloader height="h-[33rem]" />}
+          {(_) => <Preloader height="h-[31vh]" />}
         </List>
       ) : (
         <List
           list={data}
           keyFn={(item) => item.id}
-          itemClasses="basis-full flex justify-center items-center h-[33rem]"
+          itemClasses="basis-full flex justify-center items-center h-max"
           classes="gap-64"
         >
           {(item) => <CategoryCard {...item} />}
