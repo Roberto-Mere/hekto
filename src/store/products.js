@@ -24,6 +24,9 @@ export const productsSlice = createSlice({
       state.sort.perPage = action.payload;
       state.sort.page = 1;
     },
+    changePage(state, action) {
+      state.sort.page = action.payload;
+    },
     changeSortBy(state, action) {
       state.sort.sortBy = action.payload;
     },
