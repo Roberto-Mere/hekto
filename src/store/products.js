@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   sort: {
     perPage: 6,
-    sortBy: 'desc',
+    page: 1,
+    sortBy: 'asc',
     view: 'list',
   },
   filters: {
@@ -21,6 +22,7 @@ export const productsSlice = createSlice({
   reducers: {
     changePerPage(state, action) {
       state.sort.perPage = action.payload;
+      state.sort.page = 1;
     },
     changeSortBy(state, action) {
       state.sort.sortBy = action.payload;
@@ -41,6 +43,9 @@ export const productsSlice = createSlice({
     },
     setFilters(state, action) {
       state.filters = action.payload;
+    },
+    setSort(state, action) {
+      state.sort = action.payload;
     },
   },
 });
