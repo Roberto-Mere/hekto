@@ -6,10 +6,11 @@ import UserIcon from '../../assets/svg/user.svg';
 import HeartIcon from '../../assets/svg/heart.svg';
 import CartIcon from '../../assets/svg/cart.svg';
 import IconItem from '../../components/IconItem';
+import IconButton from '../../components/IconButton';
+import { Link } from 'react-router-dom';
 
 export default function Menu() {
   const menuList = [
-    // Temp language and currency IconItems while we get select menus
     {
       icon: <ArrowDownIcon />,
       text: <Typography type="sub4">English</Typography>,
@@ -20,11 +21,19 @@ export default function Menu() {
       icon: <HeartIcon />,
       text: <Typography type="sub4">Wishlist</Typography>,
     },
-    <CartIcon className="text-white" />,
+    <IconButton classes="block">
+      <Link to="/cart">
+        <CartIcon className="text-white" />
+      </Link>
+    </IconButton>,
   ];
 
   return (
-    <List list={menuList} keyFn={(_, index) => index} classes="gap-32">
+    <List
+      list={menuList}
+      keyFn={(_, index) => index}
+      classes="gap-32 items-center"
+    >
       {(item) =>
         item.text ? (
           <IconItem
