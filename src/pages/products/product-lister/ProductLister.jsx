@@ -13,8 +13,9 @@ export default function ProductLister() {
   const filters = useSelector((state) => state.products.filters);
   const sortPerPage = useSelector((state) => state.products.sort.perPage);
   const sortPage = useSelector((state) => state.products.sort.page);
+  const sortBy = useSelector((state) => state.products.sort.sortBy);
   const dispatch = useDispatch();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const priceRanges = {
     cheapest: '^[0-9]$',
@@ -35,10 +36,12 @@ export default function ProductLister() {
     },
   ];
 
-  const query = constructFetchQuery(queryParams, sortPerPage, sortPage);
+  const sort = { page: sortPage, perPage: sortPerPage, by: sortBy };
+
+  const query = constructFetchQuery(queryParams, sort);
 
   const { data, status } = useQuery({
-    queryKey: ['products', { ...filters, sortPerPage, sortPage }],
+    queryKey: ['products', filters, sort],
     queryFn: () => fetchProducts(query),
   });
 
@@ -49,6 +52,11 @@ export default function ProductLister() {
     const categoryParam = searchParams.get('category');
     const priceParam = searchParams.get('price');
 
+    const perPageParam = searchParams.get('perPage');
+    const pageParam = searchParams.get('page');
+    const sortByParam = searchParams.get('sortBy');
+    const viewParam = searchParams.get('view');
+
     dispatch(
       productsActions.setFilters({
         brand: brandParam ? brandParam.split('|') : [],
@@ -58,6 +66,24 @@ export default function ProductLister() {
         price: priceParam ? priceParam.split('|') : [],
       }),
     );
+
+    dispatch(
+      productsActions.setSort({
+        perPage: perPageParam ? +perPageParam : 6,
+        page: pageParam ? +pageParam : 1,
+        sortBy: sortByParam ?? 'asc',
+        view: viewParam ?? 'list',
+      }),
+    );
+
+    setSearchParams((prevSearchParams) => {
+      prevSearchParams.set('perPage', perPageParam ? +perPageParam : 6);
+      prevSearchParams.set('page', pageParam ? +pageParam : 1);
+      prevSearchParams.set('sortBy', sortByParam ?? 'asc');
+      prevSearchParams.set('view', viewParam ?? 'list');
+
+      return prevSearchParams;
+    });
   }, []);
 
   return (
