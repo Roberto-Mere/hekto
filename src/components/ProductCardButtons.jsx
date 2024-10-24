@@ -18,7 +18,6 @@ export default function ProductCardButtons({ item, classes }) {
   }
 
   function handleToggleFavorite() {
-    console.log(favorite);
     dispatch(favoritesActions.toggleFavorite(item.id));
   }
 
