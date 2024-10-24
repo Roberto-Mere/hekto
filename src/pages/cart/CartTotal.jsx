@@ -6,7 +6,7 @@ export default function CartTotal() {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
-    <aside className="flex max-w-[30rem] flex-1 flex-col bg-gray-1 px-16 py-8">
+    <aside className="flex max-w-[30rem] flex-1 flex-col bg-gray-1 px-16 py-8 pb-16">
       <div className="flex justify-between border-b border-b-gray-2 px-8 py-16">
         <Typography type="body-bold">Subtotal:</Typography>
         <Typography type="label-bold">
