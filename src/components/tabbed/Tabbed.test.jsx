@@ -77,4 +77,15 @@ describe('Tabbed component', () => {
 
     expect(screen.getByRole('list')).toHaveClass('flex', { exact: true });
   });
+
+  it('should have different tabs based on passed on tab type', () => {
+    const tabs = ['1', '2', '3'];
+    const RenderFn = vi.fn();
+
+    render(<Tabbed tabs={tabs} tabType="underline" RenderFn={RenderFn} />);
+
+    const buttons = screen.getAllByRole('button');
+
+    expect(buttons[0]).toHaveClass('border-b border-b-black mb-4');
+  });
 });
