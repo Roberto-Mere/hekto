@@ -22,7 +22,7 @@ export function constructFetchQuery(params, sort) {
     .slice(0, -1);
 
   const fetchQuery = filters
-    ? `${filters}&_page=${sort.page}&_limit=${sort.perPage}&_sort=${sortByOptions[sort.by]}`
+    ? `_page=${sort.page}&_limit=${sort.perPage}&_sort=${sortByOptions[sort.by]}&${filters}&`
     : `_page=${sort.page}&_limit=${sort.perPage}&_sort=${sortByOptions[sort.by]}`;
 
   return fetchQuery;
