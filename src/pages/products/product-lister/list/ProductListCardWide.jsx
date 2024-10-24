@@ -42,7 +42,10 @@ export default function ProductListCardWide({
           </div>
           <Typography classes="text-gray-3">{description}</Typography>
         </div>
-        <ProductCardButtons classes="gap-24" />
+        <ProductCardButtons
+          item={{ id, image, name, price }}
+          classes="gap-24"
+        />
       </div>
     </article>
   );

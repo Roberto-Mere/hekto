@@ -12,7 +12,10 @@ export default function ProductCard({
 }) {
   return (
     <article className="grid-product group grid basis-full rounded-xl shadow-normal transition-all duration-300 ease-out focus-within:-translate-y-24 focus-within:shadow-large hover:-translate-y-24 hover:shadow-large">
-      <ProductCardButtons classes="grid-overlap z-10 gap-8 self-start p-8 opacity-0 transition-all duration-100 group-odd/hidden:invisible group-even/hidden:invisible group-focus-within:opacity-100 group-hover:opacity-100" />
+      <ProductCardButtons
+        item={{ id, image, name, price }}
+        classes="grid-overlap z-10 gap-8 self-start p-8 opacity-0 transition-all duration-100 group-odd/hidden:invisible group-even/hidden:invisible group-focus-within:opacity-100 group-hover:opacity-100"
+      />
       <img
         src={image}
         alt={name}
