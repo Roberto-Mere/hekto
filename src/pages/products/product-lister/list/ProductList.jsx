@@ -6,12 +6,13 @@ import { useSelector } from 'react-redux';
 
 export default function ProductList({ fetchingStatus, products }) {
   const sortView = useSelector((state) => state.products.sort.view);
+  const sortPerPage = useSelector((state) => state.products.sort.perPage);
 
   return (
     <main>
       {fetchingStatus == 'pending' ? (
         <List
-          list={Array(5).fill(null)}
+          list={Array(sortPerPage).fill(null)}
           keyFn={(_, index) => index}
           classes={
             sortView === 'list' ? 'flex-col gap-32' : 'grid grid-cols-3 gap-32'
