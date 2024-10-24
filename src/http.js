@@ -23,9 +23,13 @@ export async function fetchProducts(query) {
     throw error;
   }
 
+  const pageLinks = res.headers.get('Link').split(',');
+  const lastPageIndex = pageLinks[pageLinks.length - 1].indexOf('_page') + 6;
+  const lastPage = pageLinks[pageLinks.length - 1][lastPageIndex] ?? 1;
+
   const products = await res.json();
 
-  return products;
+  return { products, lastPage };
 }
 
 export async function fetchProduct(id) {
