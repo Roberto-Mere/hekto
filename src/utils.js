@@ -7,15 +7,23 @@ function constructFetchQueryParam(name, options) {
   return fetchParam;
 }
 
-export function constructFetchQuery(params, perPage, page) {
+export function constructFetchQuery(params, sort) {
+  const sortByOptions = {
+    asc: 'price',
+    desc: 'price&_order=desc',
+    atoz: 'name',
+    ztoa: 'name&_order=desc',
+    rat: 'rating&_order=desc',
+  };
+
   const filters = params
     .map((query) => constructFetchQueryParam(query.name, query.options))
     .reduce((acc, curr) => (curr ? acc + `${curr}&` : acc), '')
     .slice(0, -1);
 
   const fetchQuery = filters
-    ? `${filters}&_page=${page}&_limit=${perPage}`
-    : `_page=${page}&_limit=${perPage}`;
+    ? `${filters}&_page=${sort.page}&_limit=${sort.perPage}&_sort=${sortByOptions[sort.by]}`
+    : `_page=${sort.page}&_limit=${sort.perPage}&_sort=${sortByOptions[sort.by]}`;
 
   return fetchQuery;
 }
