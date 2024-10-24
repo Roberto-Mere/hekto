@@ -15,7 +15,7 @@ export default function ProductListCardWide({
   description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, nam soluta! Dolores aspernatur omnis vero animi modi ut beatae.',
 }) {
   return (
-    <article className="flex gap-32 rounded-lg p-16 shadow-normal">
+    <article className="flex gap-32 rounded-lg p-16 shadow-normal duration-300 ease-out hover:shadow-large">
       <Link to={`/products/${id}`} className="w-2/5">
         <img src={image} alt={name} className="h-[18vh] w-full object-cover" />
       </Link>
