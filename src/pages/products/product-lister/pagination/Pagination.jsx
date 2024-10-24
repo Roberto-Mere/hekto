@@ -36,22 +36,26 @@ export default function Pagination({ lastPage }) {
   });
 
   return (
-    <nav className="col-span-2 mt-16 justify-self-end">
-      <List list={pages} keyFn={(page) => page} classes="gap-8">
-        {(page) => (
-          <IconButton
-            onClick={() => goToPage(page)}
-            classes={`rounded-lg py-8 px-12 ${currentPage === page ? 'bg-primary-light' : ''}`}
-          >
-            <Typography
-              type="label"
-              classes={currentPage === page ? 'text-white' : ''}
-            >
-              {page}
-            </Typography>
-          </IconButton>
-        )}
-      </List>
-    </nav>
+    <>
+      {lastPage === 1 ? null : (
+        <nav className="col-span-2 mt-16 justify-self-end">
+          <List list={pages} keyFn={(page) => page} classes="gap-8">
+            {(page) => (
+              <IconButton
+                onClick={() => goToPage(page)}
+                classes={`rounded-lg py-8 px-12 ${currentPage === page ? 'bg-primary-light' : ''}`}
+              >
+                <Typography
+                  type="label"
+                  classes={currentPage === page ? 'text-white' : ''}
+                >
+                  {page}
+                </Typography>
+              </IconButton>
+            )}
+          </List>
+        </nav>
+      )}
+    </>
   );
 }
