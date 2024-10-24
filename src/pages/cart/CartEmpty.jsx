@@ -6,7 +6,7 @@ import Typography from '../../components/typography/Typography';
 export default function CartEmpty() {
   return (
     <main className="flex flex-col items-center gap-32 px-sides py-96">
-      <img src={sadCart} alt="Empty sad cart" className="w-2/5" />
+      <img src={sadCart} alt="Empty sad cart" className="w-2/5 min-w-[40rem]" />
       <Typography type="h3">Your cart is empty</Typography>
       <Button>
         <Link to="/products">
