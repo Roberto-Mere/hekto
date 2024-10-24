@@ -8,6 +8,7 @@ import { useSearchParams } from 'react-router-dom';
 import { constructFetchQuery } from '../../../utils';
 import { useEffect } from 'react';
 import { productsActions } from '../../../store';
+import Pagination from './pagination/Pagination';
 
 export default function ProductLister() {
   const filters = useSelector((state) => state.products.filters);
@@ -90,7 +91,8 @@ export default function ProductLister() {
     <div className="grid-lister mb-64 grid gap-x-[17.2rem] gap-y-32 px-sides">
       <Sort />
       <Filters />
-      <ProductList fetchingStatus={status} products={data} />
+      <ProductList fetchingStatus={status} products={data?.products} />
+      {status === 'pending' ? null : <Pagination lastPage={+data?.lastPage} />}
     </div>
   );
 }
