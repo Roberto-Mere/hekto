@@ -1,6 +1,5 @@
 import List from '../../components/list/List';
 import Typography from '../../components/typography/Typography';
-
 import ArrowDownIcon from '../../assets/svg/arrow-down.svg';
 import UserIcon from '../../assets/svg/user.svg';
 import HeartIcon from '../../assets/svg/heart-full.svg';
@@ -24,17 +23,21 @@ export default function Menu() {
     { icon: <UserIcon />, text: <Typography type="sub4">Login</Typography> },
     {
       icon: <HeartIcon />,
-      text: <Typography type="sub4">Wishlist</Typography>,
+      text: (
+        <Link to="/wishlist">
+          <Typography type="sub4">Wishlist</Typography>
+        </Link>
+      ),
     },
     <IconButton classes="block">
       <Link to="/cart" className="flex items-center gap-12">
         <CartIcon className="text-white" />
         {cartItemsCount > 0 ? (
-          <p className="relative flex items-center justify-center rounded-full bg-white p-4">
+          <div className="relative flex items-center justify-center rounded-full bg-white p-4">
             <Typography type="label-small" classes="w-16 h-16">
               {cartItemsCount}
             </Typography>
-          </p>
+          </div>
         ) : null}
       </Link>
     </IconButton>,
