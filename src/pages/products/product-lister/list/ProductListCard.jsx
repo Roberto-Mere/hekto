@@ -15,7 +15,7 @@ export default function ProductListCard({
   description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, nam soluta! Dolores aspernatur omnis vero animi modi ut beatae.',
 }) {
   return (
-    <article className="flex h-full flex-col rounded-lg p-8 shadow-normal">
+    <article className="flex h-full flex-col rounded-lg p-8 shadow-normal transition-all duration-300 ease-out hover:shadow-large">
       <Link to={`/products/${id}`} className="h-[18vh]">
         <img
           src={image}
@@ -44,7 +44,10 @@ export default function ProductListCard({
           </div>
           <Typography classes="text-gray-3 my-16">{description}</Typography>
         </div>
-        <ProductCardButtons classes="gap-24" />
+        <ProductCardButtons
+          item={{ id, image, name, price }}
+          classes="gap-24"
+        />
       </div>
     </article>
   );

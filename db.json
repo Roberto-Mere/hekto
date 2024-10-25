@@ -18,7 +18,12 @@
       "rating": 3,
       "category": "headphones",
       "brand": "apple",
-      "image": "/products/headphones.png"
+      "image": "/products/headphones.png",
+      "showcase": [
+        "/products/headphones.png",
+        "/products/headphones-2.png",
+        "/products/headphones-3.png"
+      ]
     },
     {
       "id": 3,

@@ -7,6 +7,7 @@ export default function Tabbed({
   RenderFn,
   classes = '',
   buttonsClasses = '',
+  tabType,
 }) {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
@@ -17,14 +18,22 @@ export default function Tabbed({
   return (
     <div className={classes ? classes : null} data-testid="tabbed">
       <List list={tabs} keyFn={(tab) => tab} classes={`${buttonsClasses}`}>
-        {(tab) => (
-          <button
-            className={`${activeTab === tab ? 'text-primary' : null}`}
-            onClick={() => changeTab(tab)}
-          >
-            <Typography type="body-large">{tab}</Typography>
-          </button>
-        )}
+        {(tab) => {
+          const tabClass =
+            tabType === 'underline'
+              ? `${activeTab === tab ? 'border-b border-b-black mb-4' : null}`
+              : `${activeTab === tab ? 'text-primary' : null}`;
+
+          return (
+            <button className={tabClass} onClick={() => changeTab(tab)}>
+              <Typography
+                type={tabType === 'underline' ? 'sub1' : 'body-large'}
+              >
+                {tab}
+              </Typography>
+            </button>
+          );
+        }}
       </List>
       <RenderFn tab={activeTab} />
     </div>

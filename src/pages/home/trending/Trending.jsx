@@ -2,7 +2,6 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchProductSlice } from '../../../http';
 import Typography from '../../../components/typography/Typography';
 import ProductCardSmall from '../../../components/ProductCardSmall';
-import Loader from '../../../components/Loader';
 import List from '../../../components/list/List';
 import Preloader from '../../../components/Preloader';
 
