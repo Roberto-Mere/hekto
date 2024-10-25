@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { fetchProduct } from '../http';
-import Preloader from '../components/Preloader';
-import Typography from '../components/typography/Typography';
-import Stars from '../components/Stars';
-import ProductCardButtons from '../components/ProductCardButtons';
+import { fetchProduct } from '../../http';
+import Preloader from '../../components/Preloader';
+import Typography from '../../components/typography/Typography';
+import Stars from '../../components/Stars';
+import ProductCardButtons from '../../components/ProductCardButtons';
 
 export default function WishlistCard({ favId }) {
   const { data, status } = useQuery({

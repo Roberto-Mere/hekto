@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import WishlistCard from './WishlistCard';
-import List from '../components/list/List';
-import Typography from '../components/typography/Typography';
-import Button from '../components/button/Button';
+import List from '../../components/list/List';
+import Typography from '../../components/typography/Typography';
+import Button from '../../components/button/Button';
 import { Link } from 'react-router-dom';
 
 export default function Wishlist() {
