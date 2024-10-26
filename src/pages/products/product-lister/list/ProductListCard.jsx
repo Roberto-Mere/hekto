@@ -1,6 +1,4 @@
 import Typography from '../../../../components/typography/Typography';
-import Star from '../../../../assets/svg/star.svg';
-import List from '../../../../components/list/List';
 import ProductCardButtons from '../../../../components/ProductCardButtons';
 import { Link } from 'react-router-dom';
 import Stars from '../../../../components/Stars';

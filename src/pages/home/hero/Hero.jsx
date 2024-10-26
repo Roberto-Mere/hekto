@@ -47,6 +47,7 @@ export default function Hero() {
         RenderFn={({ slide }) => <HeroSlide {...slidesContent[slide]} />}
         buttonType="romboid"
         buttonsClasses="gap-16 justify-center"
+        timer={10}
       />
     </section>
   );

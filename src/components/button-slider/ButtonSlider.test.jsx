@@ -1,7 +1,7 @@
 import ButtonSlider from './ButtonSlider';
-import { getAllByRole, render, screen } from '@testing-library/react';
+import { act, getAllByRole, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { expect, it, vi } from 'vitest';
+import { expect, it, vi, vitest } from 'vitest';
 
 describe('Button slider component', () => {
   it('should render lists of buttons and slides using passed initial slides', () => {
@@ -113,5 +113,29 @@ describe('Button slider component', () => {
     expect(slides[0]).toHaveStyle('transform: translateX(-100%)');
     expect(slides[1]).toHaveStyle('transform: translateX(-100%)');
     expect(slides[2]).toHaveStyle('transform: translateX(-100%)');
+  });
+
+  it('should slide on a timer if passed', async () => {
+    const initialSlides = [true, true, true];
+    const RenderFn = vi.fn();
+    const timer = 10;
+
+    render(
+      <ButtonSlider
+        initialSlides={initialSlides}
+        timer={timer}
+        RenderFn={RenderFn}
+      />,
+    );
+
+    const slides = screen.getAllByTestId('slide');
+    vi.useFakeTimers();
+
+    expect(slides[0]).toHaveStyle('transform: translateX(0%)');
+
+    setTimeout(
+      () => expect(slides[0]).toHaveStyle('transform: translateX(-100%)'),
+      timer,
+    );
   });
 });

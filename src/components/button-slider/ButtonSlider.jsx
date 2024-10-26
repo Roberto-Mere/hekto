@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import List from '../list/List';
 import Romboid from '../../assets/svg/romboid.svg';
 import Rectangle from '../Rectangle';
@@ -10,9 +10,11 @@ export default function ButtonSlider({
   buttonType,
   classes = '',
   buttonsClasses = '',
+  timer,
 }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [fetchedSlides, setFetchedSlides] = useState(initialSlides);
+  const interval = useRef(null);
 
   function goToSlide(slide) {
     setActiveSlide(slide);
@@ -35,6 +37,17 @@ export default function ButtonSlider({
       });
     }
   }
+
+  useEffect(() => {
+    if (timer) {
+      interval.current = setInterval(() => {
+        if (activeSlide === fetchedSlides.length - 1) goToSlide(0);
+        else goToSlide(activeSlide + 1);
+      }, timer * 1000);
+
+      return () => clearInterval(interval.current);
+    }
+  }, [activeSlide]);
 
   const buttons = initialSlides.map((_, index) => {
     const isActive = activeSlide === index;
