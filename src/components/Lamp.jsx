@@ -1,14 +1,24 @@
 import Dot from '../components/Dot';
 import headlamp from '../assets/image/headlamp.png';
 import Light from '../assets/svg/light.svg';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import Dog from './Dog';
 
 export default function Lamp() {
   const [isTurnedOn, setIsTurnedOn] = useState(false);
+  const [showDog, setShowDog] = useState(false);
+  const dogTimer = useRef(null);
 
   function toggleLight() {
     setIsTurnedOn((prevIsTurnedOn) => !prevIsTurnedOn);
+    setShowDog(false);
   }
+
+  useEffect(() => {
+    if (isTurnedOn) {
+      dogTimer.current = setTimeout(() => setShowDog(true), 7000);
+    }
+  }, [isTurnedOn]);
 
   return (
     <div className="relative z-10 ml-64">
@@ -27,6 +37,7 @@ export default function Lamp() {
       <button className="absolute left-128 top-[48rem]" onClick={toggleLight}>
         <Dot classes="h-16 w-16 bg-primary" />
       </button>
+      {showDog ? <Dog /> : null}
     </div>
   );
 }
