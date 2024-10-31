@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import Button from './button/Button';
-import Typography from './typography/Typography';
-import Ellipse from '../assets/svg/ellipse.svg';
+import Button from '../../../components/button/Button';
+import Typography from '../../../components/typography/Typography';
+import Ellipse from '../../../assets/svg/ellipse.svg';
 
-export default function CategoryCard({ id, name, image }) {
+export default function CategoryCard({ name, image }) {
   return (
     <article>
       <div className="group grid">
@@ -16,7 +16,7 @@ export default function CategoryCard({ id, name, image }) {
           />
         </div>
         <Link
-          to={`/products?category=${id}`}
+          to={`/products?category=${name}`}
           className="grid-overlap z-10 mb-24 self-end justify-self-center rounded-xl opacity-0 transition-all duration-100 group-odd/hidden:invisible group-focus-within:opacity-100 group-hover:opacity-100"
         >
           <Button size="small" backgroundColor="bg-success" tabIndex={-1}>
