@@ -18,6 +18,7 @@ export default function Lamp() {
     if (isTurnedOn) {
       dogTimer.current = setTimeout(() => setShowDog(true), 7000);
     }
+    return () => clearTimeout(dogTimer.current);
   }, [isTurnedOn]);
 
   return (
@@ -26,7 +27,7 @@ export default function Lamp() {
         <img
           src={headlamp}
           alt="Headlamp"
-          className="peer absolute -top-128 z-10 h-[35vh] w-auto transition-all duration-700 ease-in-out hover:top-0"
+          className="peer absolute -top-128 z-10 h-[38rem] w-auto transition-all duration-700 ease-in-out hover:top-0"
         />
         {isTurnedOn ? (
           <Light className="absolute left-12 top-[20rem] text-background opacity-75 transition-all duration-700 ease-in-out peer-hover:top-[32rem]" />
