@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchCategoriesSlice } from '../../../http';
 import List from '../../../components/list/List';
 import Preloader from '../../../components/Preloader';
-import CategoryCard from '../../../components/CategoryCard';
+import CategoryCard from './CategoryCard';
 
 export default function CategorySlide({ slide }) {
   const { data, status } = useQuery({
